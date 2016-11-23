@@ -5,17 +5,19 @@
 ============================*/
 
 
-.header--inline{
+.header--base{
     @include font-color--all(map-get($color, light));
     @include small--base{
         color: map-get($map: $color, $key: dark);
     }
-    h1{
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
+    margin-bottom: 0px;
+    
+        h1{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
 
-    .header__nav--inline{
+    .header__nav--base{
         @include paddingRow--base;
         position: relative;
     }
@@ -26,7 +28,6 @@
         right: 15px;
         bottom: 15px;
     }
-
     .nav__list-item--inline{}
 
 }

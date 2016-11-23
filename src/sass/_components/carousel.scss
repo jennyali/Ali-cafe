@@ -1,0 +1,13 @@
+/*===========================
+        CAROUSEL
+============================*/
+
+.item--base{
+    overflow: hidden;
+    max-height: 750px;
+}
+
+.item__img--base{
+    width: 100%;
+    transform: translateY(-10%);
+}
