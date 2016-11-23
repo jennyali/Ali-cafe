@@ -4,3 +4,8 @@
 ============================*/
 
 
+#index{
+    @include backgroundGradient--body;
+    @include font-color--all(map-get($color, dark));
+    @include font-family--base;
+}
