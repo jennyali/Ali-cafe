@@ -1,0 +1,94 @@
+@import "_helpers/variables";
+
+/*===========================
+           MIXINS
+
+=========   Contents   =======
+
+    1,     + font styles
+
+    2,     + color themes
+
+    3,     + margin     + padding
+             
+    4,   
+
+===============================*/
+
+
+//  +   font styles
+
+@mixin font-color--all($textCol){
+    h1,h3,h4,p,li,a{
+        color: $textCol;
+    }
+
+    .lead--custom{
+        color: $textCol;
+    }
+}
+
+@mixin font-family--base(){
+    h1{
+        font-family: $font-family-heading;
+    }
+
+    h3{
+        font-family: $font-family-heading;
+    }
+
+    h4{
+        font-family: $font-family-heading;
+    }
+
+    p{
+        font-family: $font-family-base;
+    }
+
+    li{
+        font-family: $font-family-base;
+    }
+
+    a{
+        font-family: $font-family-base;
+    }
+
+    .lead--custom {
+        font-family: $font-family-handwriting;
+    }
+}
+
+//  + color themes
+
+@mixin colorTheme--base{
+    background-color: map-get($map: $color, $key: light);
+    color: map-get($map: $color, $key: dark);
+}
+
+@mixin colorTheme--base-dark{
+    background-color: map-get($map: $color, $key: base);
+    color: map-get($map: $color, $key: light);
+}
+
+@mixin colorTheme--invert{
+    background-color: map-get($map: $color, $key: dark);
+    color: map-get($map: $color, $key: light);
+}
+
+@mixin colorTheme--contrast{
+    background-color: map-get($map: $color, $key: contrast);
+    color: map-get($map: $color, $key: white);
+}
+
+//  + margin     + padding
+
+@mixin marginRow--base($top: 15px, $bottom: 15px){
+    margin-top: $top;
+    margin-bottom: $bottom;
+}
+
+@mixin paddingRow--base($top: 15px, $bottom: 15px){
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+

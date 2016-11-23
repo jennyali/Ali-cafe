@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../node_modules/normalize.css" rel="stylesheet" type="text/css">
     <link href="https://file.myfontastic.com/ncjQH3qL3iqtxPyrLNBQDo/icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Sumana:700" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    
 
 </head>
         
@@ -267,21 +269,29 @@
         </main>
     </section>
 
-    <header class="navbar navbar-default navbar-fixed-bottom hidden-xs">
-        <nav class="container">
+    <!-- header fixed bottom/ inline style/ hidden-xs screen -->
+    <header class="navbar navbar-default--custom navbar-fixed-bottom hidden-xs header--inline">
+        <nav class="container header__nav--inline">
             <div class="site-logo navbar-header">
-                <a data-toggle="pill" href="#index"><h1>Ali's Cafe<br><small>Coffee Specialists</small></h1></a>
+                <a data-toggle="pill" href="#index">
+                    <h1 class="logo__primary-text">Ali's</h1>
+                    <h1 class="logo__secondary-text">Cafe</h1>
+                    <h3 class="small--base logo__small-text">
+                            Coffee Specialists
+                    </h1>
+                </a>
             </div>
-            <ul class="nav navbar-nav navbar-right nav-pills">
-                <li><a data-toggle="pill" href="#ourShops">Our Shops</a></li>
-                <li><a data-toggle="pill" href="#menus">Menus</a></li>
-                <li><a data-toggle="pill" href="#buyCoffee">Buy Coffee</a></li>
+            <ul class="nav navbar-nav navbar-right nav-pills nav__list--inline">
+                <li class="nav__list-item--inline"><a data-toggle="pill" href="#ourShops">Our Shops</a></li>
+                <li class="nav__list-item--inline"><a data-toggle="pill" href="#menus">Menus</a></li>
+                <li class="nav__list-item--inline"><a data-toggle="pill" href="#buyCoffee">Buy Coffee</a></li>
             </ul>
         </nav>
-        <footer class="container">
+        <footer class="container header__footer--inside">
             <p>2023 Ali's Cafe, created by Jennifer Ali</p>
         </footer>
     </header>
+
     <footer class="container visible-xs">
         <p>2023 Ali's Cafe, created by Jennifer Ali</p>
     </footer>

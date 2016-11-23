@@ -1,0 +1,69 @@
+
+/*===========================
+            NAV's
+============================*/
+
+// +BS custom
+.navbar-default--custom {
+  @include colorTheme--base-dark;
+  @include font-family--base;
+  border-color: map-get($map: $color, $key: base);
+
+  .navbar-brand {
+    color: $navbar-default-brand-color;
+    &:hover,
+    &:focus {
+      color: $navbar-default-brand-hover-color;
+      background-color: $navbar-default-brand-hover-bg;
+    }
+  }
+
+  .navbar-text {
+    color: map-get($map: $color, $key: light);
+  }
+
+.navbar-nav {
+    > li > a {
+      color: map-get($map: $color, $key: light);
+
+      &:hover,
+      &:focus {
+        color: map-get($map: $color, $key: dark);
+        background-color: $navbar-default-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: map-get($map: $color, $key: contrast);
+        background-color: map-get($map: $color, $key: base);
+        font-weight: bold;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-default-link-disabled-color;
+        background-color: $navbar-default-link-disabled-bg;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: $navbar-default-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: $navbar-default-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: $navbar-default-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $navbar-default-border;
+    }
+}

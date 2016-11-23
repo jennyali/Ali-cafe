@@ -1,0 +1,27 @@
+/*===========================
+            LOGOs
+============================*/
+
+// main site logo
+
+.site-logo{
+    a{
+        text-decoration: none;
+    }
+
+    .logo__primary-text{
+        @include colorTheme--contrast;
+        font-family: $font-family-handwriting;
+        font-size: 28px;
+        padding: 15px;
+        display: inline-block;    
+        margin-bottom: 0px;
+    }
+    .logo__secondary-text{
+        display: inline;
+    }
+
+    .logo__small-text{
+
+    }
+}
