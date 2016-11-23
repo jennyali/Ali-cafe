@@ -5858,6 +5858,84 @@ button.close {
   display: inline; }
 
 /*===========================
+        JUMBOTRON
+============================*/
+.jumbotron--base {
+  padding-top: 0px; }
+
+/*===========================
+        CAROUSEL
+============================*/
+.item--base {
+  overflow: hidden;
+  max-height: 750px; }
+
+.item__img--base {
+  width: 100%;
+  transform: translateY(-10%); }
+
+/*===========================
+        BUTTONS
+============================*/
+.btn-primary--base {
+  background-color: #937966;
+  color: #E2CFB7; }
+
+.btn--base {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 36px;
+  line-height: 1.42857;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/*===========================
+        DROPDOWN MENU
+============================*/
+.dropdown-menu--base {
+  position: absolute;
+  top: 150%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 328px;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  right: 15px;
+  left: auto;
+  border-radius: 0px;
+  padding: 0px; }
+  .dropdown-menu--base li a {
+    padding: 15px; }
+
+.dropdown-menu > .active > a {
+  background-color: #1C0305;
+  color: #E2CFB7;
+  text-decoration: none;
+  outline: 0; }
+
+/*===========================
            VARIABLES
 
 =========   Contents   =======
@@ -5888,29 +5966,26 @@ button.close {
 /*===========================
             HEADER
 ============================*/
-.header--inline h1, .header--inline h3, .header--inline h4, .header--inline p, .header--inline li, .header--inline a {
-  color: #E2CFB7; }
-
-.header--inline .lead--custom {
-  color: #E2CFB7; }
-
-.header--inline .small--base {
-  margin: 0px;
-  color: #1C0305; }
-
-.header--inline h1 {
-  margin-top: 0px;
+.header--base {
   margin-bottom: 0px; }
-
-.header--inline .header__nav--inline {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  position: relative; }
-
-.header--inline .nav__list--inline {
-  position: absolute;
-  right: 15px;
-  bottom: 15px; }
+  .header--base h1, .header--base h3, .header--base h4, .header--base p, .header--base li, .header--base a {
+    color: #E2CFB7; }
+  .header--base .lead--custom {
+    color: #E2CFB7; }
+  .header--base .small--base {
+    margin: 0px;
+    color: #1C0305; }
+  .header--base h1 {
+    margin-top: 0px;
+    margin-bottom: 0px; }
+  .header--base .header__nav--base {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative; }
+  .header--base .nav__list--inline {
+    position: absolute;
+    right: 15px;
+    bottom: 15px; }
 
 /*===========================
             INDEX

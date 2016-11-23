@@ -14,16 +14,22 @@
 </head>
         
 <body>
-    <header class="container navbar navbar-default visible-xs">
-        <nav class="row">
-            <div class="site-logo navbar-header col-xs-8">
-                <a data-toggle="pill" href="#index"><h1>Ali's Cafe<br><small>Coffee Specialists</small></h1></a>
+    <header class="container navbar navbar-default--custom visible-xs header--base">
+        <nav class="row header__nav--base">
+            <div class="site-logo col-xs-8 navbar-header">
+                <a data-toggle="pill" href="#index">
+                    <h1 class="logo__primary-text">Ali's</h1>
+                    <h1 class="logo__secondary-text">Cafe</h1>
+                    <h3 class="small--base logo__small-text">
+                            Coffee Specialists
+                    </h1>
+                </a>
             </div>
             <div class="dropdown col-xs-4 ">
-                <button class="btn btn-primary dropdown-toggle pull-right" type="button" data-toggle="dropdown">
+                <button class="btn--base btn-primary--base dropdown-toggle pull-right" type="button" data-toggle="dropdown">
                     <span class="icon-bars"></span>
                 </button>
-                <ul class="dropdown-menu dropdown-menu-right">
+                <ul class="dropdown-menu dropdown-menu--base">
                     <li><a data-toggle="pill" href="#ourShops">Our Shops</a></li>
                     <li><a data-toggle="pill" href="#menus">Menus</a></li>
                     <li><a data-toggle="pill" href="#buyCoffee">Buy Coffee</a></li>
@@ -36,7 +42,7 @@
     <section class="tab-content">
         <!-- INDEX/ HOME PAGE -->
         <main id="index" class="tab-pane fade in active">
-            <section class="jumbotron">
+            <section class="jumbotron jumbotron--base">
                 <div id="indexCarousel" class="carousel slide" data-ride="carousel">
                       <!-- DOTS -->
                     <ol class="carousel-indicators">
@@ -46,16 +52,16 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <!-- slides -->
-                        <div class="item active">
-                            <img class="img-responsive" src="images/latte-img.jpg" alt="latte">
+                        <div class="item item--base active">
+                            <img class="img-responsive item__img--base" src="images/latte-img.jpg" alt="latte">
                         </div>
 
-                        <div class="item">
-                            <img class="img-responsive" src="images/coffee-machine.jpeg" alt="coffee-machine">
+                        <div class="item item--base">
+                            <img class="img-responsive item__img--base" src="images/coffee-machine.jpeg" alt="coffee-machine">
                         </div>
 
-                        <div class="item">
-                            <img class="img-responsive" src="images/coffeebean-cup.jpeg" alt="coffee-beans">
+                        <div class="item item--base">
+                            <img class="img-responsive item__img--base" src="images/coffeebean-cup.jpeg" alt="coffee-beans">
                         </div>
                     </div>
                 </div>
@@ -270,8 +276,8 @@
     </section>
 
     <!-- header fixed bottom/ inline style/ hidden-xs screen -->
-    <header class="navbar navbar-default--custom navbar-fixed-bottom hidden-xs header--inline">
-        <nav class="container header__nav--inline">
+    <header class="navbar navbar-default--custom navbar-fixed-bottom hidden-xs header--base">
+        <nav class="container header__nav--base">
             <div class="site-logo navbar-header">
                 <a data-toggle="pill" href="#index">
                     <h1 class="logo__primary-text">Ali's</h1>
