@@ -5753,7 +5753,7 @@ button.close {
 
     2,   + FONT-FAMILIES
 
-    3,    
+    3,    + BREAKPOINTS
              
     4,   
 
@@ -5781,7 +5781,7 @@ button.close {
 
     2,   + FONT-FAMILIES
 
-    3,    
+    3,    + BREAKPOINTS
              
     4,   
 
@@ -5861,27 +5861,44 @@ button.close {
         JUMBOTRON
 ============================*/
 .jumbotron--base {
-  padding-top: 0px; }
+  padding: 0px; }
 
 /*===========================
         CAROUSEL
 ============================*/
 .item--base {
   overflow: hidden;
-  max-height: 750px; }
+  max-height: 750px;
+  background-color: #E2CFB7; }
 
 .item__img--base {
-  width: 100%;
-  transform: translateY(-10%); }
+  width: 100%; }
+  @media screen and (min-width: 1200px) {
+    .item__img--base {
+      transform: translateY(-10%); } }
+
+.carousel-title {
+  position: absolute;
+  bottom: 300px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  margin-left: -30%;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
+  color: white;
+  font-size: 120px;
+  line-height: 100px; }
 
 /*===========================
         BUTTONS
 ============================*/
-.btn-primary--base {
+.btn-primary--base, .icon-delete-1 {
   background-color: #937966;
   color: #E2CFB7; }
 
-.btn--base {
+.btn--base, .icon-delete-1 {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -5902,36 +5919,58 @@ button.close {
   -ms-user-select: none;
   user-select: none; }
 
+.icon-delete-1 {
+  font-size: 26px;
+  padding: 0px 5px 5px 0px; }
+
 /*===========================
         DROPDOWN MENU
 ============================*/
 .dropdown-menu--base {
+  background-color: #E2CFB7;
+  color: #1C0305;
   position: absolute;
-  top: 150%;
+  top: 155%;
   left: 0;
   z-index: 1000;
   display: none;
   float: left;
   min-width: 328px;
-  margin: 2px 0 0;
+  margin: 0px;
   list-style: none;
   font-size: 14px;
   text-align: left;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  border: 1px solid #937966;
+  border-top: none;
+  box-shadow: none;
   background-clip: padding-box;
   right: 15px;
   left: auto;
   border-radius: 0px;
   padding: 0px; }
-  .dropdown-menu--base li a {
-    padding: 15px; }
+  .dropdown-menu--base li a:hover {
+    background-color: #937966;
+    color: #E2CFB7; }
 
-.dropdown-menu > .active > a {
-  background-color: #1C0305;
-  color: #E2CFB7;
+.dropdown-menu > li > a {
+  display: block;
+  padding: 15px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857;
+  color: #1C0305;
+  white-space: nowrap;
+  border-top: 1px solid #937966; }
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  background-color: #C41D44;
+  color: #F4F8FF;
+  text-decoration: none;
+  outline: 0; }
+
+.myActive {
+  background-color: #C41D44;
+  color: #F4F8FF;
   text-decoration: none;
   outline: 0; }
 
@@ -5944,7 +5983,7 @@ button.close {
 
     2,   + FONT-FAMILIES
 
-    3,    
+    3,    + BREAKPOINTS
              
     4,   
 
@@ -5987,8 +6026,34 @@ button.close {
     right: 15px;
     bottom: 15px; }
 
+body {
+  background-color: #937966; }
+
 /*===========================
             INDEX
 ============================*/
+#index {
+  background: white;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(47%, rgba(246, 246, 246, 0.7)), color-stop(100%, rgba(237, 237, 237, 0.37)));
+  background: linear-gradient(to bottom, white 0%, rgba(246, 246, 246, 0.7) 47%, rgba(237, 237, 237, 0.37) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 ); }
+  #index h1, #index h3, #index h4, #index p, #index li, #index a {
+    color: #1C0305; }
+  #index .lead--custom {
+    color: #1C0305; }
+  #index h1 {
+    font-family: "Sumana", serif; }
+  #index h3 {
+    font-family: "Sumana", serif; }
+  #index h4 {
+    font-family: "Sumana", serif; }
+  #index p {
+    font-family: "Open Sans", sans-serif; }
+  #index li {
+    font-family: "Open Sans", sans-serif; }
+  #index a {
+    font-family: "Open Sans", sans-serif; }
+  #index .lead--custom {
+    font-family: "Pacifico", cursive; }
 
 /*# sourceMappingURL=styles.css.map */

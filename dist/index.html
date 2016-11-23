@@ -26,7 +26,7 @@
                 </a>
             </div>
             <div class="dropdown col-xs-4 ">
-                <button class="btn--base btn-primary--base dropdown-toggle pull-right" type="button" data-toggle="dropdown">
+                <button class="btn--base btn-primary--base dropdown-toggle pull-right" type="button">
                     <span class="icon-bars"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu--base">
@@ -36,6 +36,29 @@
                 </ul>
             </div>
         </nav>
+    </header>
+
+        <!-- header fixed bottom/ inline style/ hidden-xs screen -->    
+    <header class="navbar navbar-default--custom hidden-xs header--base" id="header-inline">
+        <nav class="container header__nav--base">
+            <div class="site-logo navbar-header">
+                <a data-toggle="pill" href="#index">
+                    <h1 class="logo__primary-text">Ali's</h1>
+                    <h1 class="logo__secondary-text">Cafe</h1>
+                    <h3 class="small--base logo__small-text">
+                            Coffee Specialists
+                    </h1>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right nav-pills nav__list--inline">
+                <li class="nav__list-item--inline"><a data-toggle="pill" href="#ourShops">Our Shops</a></li>
+                <li class="nav__list-item--inline"><a data-toggle="pill" href="#menus">Menus</a></li>
+                <li class="nav__list-item--inline"><a data-toggle="pill" href="#buyCoffee">Buy Coffee</a></li>
+            </ul>
+        </nav>
+        <footer class="container header__footer--inside hidden-sm">
+            <p>2023 Ali's Cafe, created by Jennifer Ali</p>
+        </footer>
     </header>
 
 
@@ -50,6 +73,9 @@
                         <li data-target="#indexCarousel" data-slide-to="1"></li>
                         <li data-target="#indexCarousel" data-slide-to="2"></li>
                     </ol>
+                    <div class="carousel-title">
+                        <h1>Local<br>Artisan<br>Coffee</h1>
+                    </div>
                     <div class="carousel-inner" role="listbox">
                         <!-- slides -->
                         <div class="item item--base active">
@@ -275,30 +301,9 @@
         </main>
     </section>
 
-    <!-- header fixed bottom/ inline style/ hidden-xs screen -->
-    <header class="navbar navbar-default--custom navbar-fixed-bottom hidden-xs header--base">
-        <nav class="container header__nav--base">
-            <div class="site-logo navbar-header">
-                <a data-toggle="pill" href="#index">
-                    <h1 class="logo__primary-text">Ali's</h1>
-                    <h1 class="logo__secondary-text">Cafe</h1>
-                    <h3 class="small--base logo__small-text">
-                            Coffee Specialists
-                    </h1>
-                </a>
-            </div>
-            <ul class="nav navbar-nav navbar-right nav-pills nav__list--inline">
-                <li class="nav__list-item--inline"><a data-toggle="pill" href="#ourShops">Our Shops</a></li>
-                <li class="nav__list-item--inline"><a data-toggle="pill" href="#menus">Menus</a></li>
-                <li class="nav__list-item--inline"><a data-toggle="pill" href="#buyCoffee">Buy Coffee</a></li>
-            </ul>
-        </nav>
-        <footer class="container header__footer--inside">
-            <p>2023 Ali's Cafe, created by Jennifer Ali</p>
-        </footer>
-    </header>
 
-    <footer class="container visible-xs">
+
+    <footer class="container visible-xs-sm">
         <p>2023 Ali's Cafe, created by Jennifer Ali</p>
     </footer>
 

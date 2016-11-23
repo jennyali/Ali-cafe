@@ -29,3 +29,10 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+.icon-delete-1{
+    @extend .btn-primary--base;
+    @extend .btn--base;
+    font-size: 26px;
+    padding: 0px 5px 5px 0px;
+}
