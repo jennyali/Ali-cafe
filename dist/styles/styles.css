@@ -5734,9 +5734,9 @@ button.close {
 /*
     =============   Contents   =============
 
-             1,   Components
+             1,   Helpers
 
-             2,   Helpers
+             2,   Components
 
              3,   Layout 
              
@@ -5744,5 +5744,176 @@ button.close {
 
     ========================================
 */
+/*===========================
+           VARIABLES
+
+=========   Contents   =======
+
+    1,   + COLORS 
+
+    2,   + FONT-FAMILIES
+
+    3,    
+             
+    4,   
+
+===============================*/
+/*===========================
+           MIXINS
+
+=========   Contents   =======
+
+    1,     + font styles
+
+    2,     + color themes
+
+    3,     + margin     + padding
+             
+    4,   
+
+===============================*/
+/*===========================
+           VARIABLES
+
+=========   Contents   =======
+
+    1,   + COLORS 
+
+    2,   + FONT-FAMILIES
+
+    3,    
+             
+    4,   
+
+===============================*/
+/*=============================
+    MY CUSTOM BOOTSTRAP STYLES
+===============================*/
+/*===========================
+            NAV's
+============================*/
+.navbar-default--custom {
+  background-color: #937966;
+  color: #E2CFB7;
+  border-color: #937966; }
+  .navbar-default--custom h1 {
+    font-family: "Sumana", serif; }
+  .navbar-default--custom h3 {
+    font-family: "Sumana", serif; }
+  .navbar-default--custom h4 {
+    font-family: "Sumana", serif; }
+  .navbar-default--custom p {
+    font-family: "Open Sans", sans-serif; }
+  .navbar-default--custom li {
+    font-family: "Open Sans", sans-serif; }
+  .navbar-default--custom a {
+    font-family: "Open Sans", sans-serif; }
+  .navbar-default--custom .lead--custom {
+    font-family: "Pacifico", cursive; }
+  .navbar-default--custom .navbar-brand {
+    color: #777; }
+    .navbar-default--custom .navbar-brand:hover, .navbar-default--custom .navbar-brand:focus {
+      color: #5e5e5e;
+      background-color: transparent; }
+  .navbar-default--custom .navbar-text {
+    color: #E2CFB7; }
+  .navbar-default--custom .navbar-nav > li > a {
+    color: #E2CFB7; }
+    .navbar-default--custom .navbar-nav > li > a:hover, .navbar-default--custom .navbar-nav > li > a:focus {
+      color: #1C0305;
+      background-color: transparent; }
+  .navbar-default--custom .navbar-nav > .active > a, .navbar-default--custom .navbar-nav > .active > a:hover, .navbar-default--custom .navbar-nav > .active > a:focus {
+    color: #C41D44;
+    background-color: #937966;
+    font-weight: bold; }
+  .navbar-default--custom .navbar-nav > .disabled > a, .navbar-default--custom .navbar-nav > .disabled > a:hover, .navbar-default--custom .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent; }
+  .navbar-default--custom .navbar-toggle {
+    border-color: #ddd; }
+    .navbar-default--custom .navbar-toggle:hover, .navbar-default--custom .navbar-toggle:focus {
+      background-color: #ddd; }
+    .navbar-default--custom .navbar-toggle .icon-bar {
+      background-color: #888; }
+  .navbar-default--custom .navbar-collapse,
+  .navbar-default--custom .navbar-form {
+    border-color: #e7e7e7; }
+
+/*===========================
+            LOGOs
+============================*/
+.site-logo a {
+  text-decoration: none; }
+
+.site-logo .logo__primary-text {
+  background-color: #C41D44;
+  color: #F4F8FF;
+  font-family: "Pacifico", cursive;
+  font-size: 28px;
+  padding: 15px;
+  display: inline-block;
+  margin-bottom: 0px; }
+
+.site-logo .logo__secondary-text {
+  display: inline; }
+
+/*===========================
+           VARIABLES
+
+=========   Contents   =======
+
+    1,   + COLORS 
+
+    2,   + FONT-FAMILIES
+
+    3,    
+             
+    4,   
+
+===============================*/
+/*===========================
+           MIXINS
+
+=========   Contents   =======
+
+    1,     + font styles
+
+    2,     + color themes
+
+    3,     + margin     + padding
+             
+    4,   
+
+===============================*/
+/*===========================
+            HEADER
+============================*/
+.header--inline h1, .header--inline h3, .header--inline h4, .header--inline p, .header--inline li, .header--inline a {
+  color: #E2CFB7; }
+
+.header--inline .lead--custom {
+  color: #E2CFB7; }
+
+.header--inline .small--base {
+  margin: 0px;
+  color: #1C0305; }
+
+.header--inline h1 {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.header--inline .header__nav--inline {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative; }
+
+.header--inline .nav__list--inline {
+  position: absolute;
+  right: 15px;
+  bottom: 15px; }
+
+/*===========================
+            INDEX
+============================*/
 
 /*# sourceMappingURL=styles.css.map */

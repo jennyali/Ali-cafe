@@ -4,9 +4,9 @@
 /*
     =============   Contents   =============
 
-             1,   Components
+             1,   Helpers
 
-             2,   Helpers
+             2,   Components
 
              3,   Layout 
              
@@ -15,17 +15,20 @@
     ========================================
 */
 
-//========  Components =====
-
-
-
 //========  Helpers ========
+@import "_helpers/mixins";
+@import "_helpers/variables";
+@import "_helpers/bootstrapCustom";
+
+//========  Components =====
+@import "_components/nav";
+@import "_components/logo";
 
 
 
 //========  Layout =========
-
+@import "_layout/header";
 
 
 //========  Pages ==========
-
+@import "_pages/index";

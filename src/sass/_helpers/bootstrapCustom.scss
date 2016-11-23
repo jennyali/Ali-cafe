@@ -1,0 +1,15 @@
+
+/*=============================
+    MY CUSTOM BOOTSTRAP STYLES
+===============================*/
+
+
+// bootstrap customs
+
+@mixin small--base{
+    .small--base{
+        margin: 0px;
+        @content;
+    }
+}
+
