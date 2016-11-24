@@ -8,6 +8,10 @@
     @include paddingCol--xs;
     padding-top: 15px;
 
+        @include media(map-get($breakpoints, sm)){
+            padding: 15px 0px 0px 0px;
+        }
+
     a{
         text-decoration: none;
     }
@@ -22,7 +26,9 @@
     }
     .logo__secondary-text{
         margin-top: 5px;
+        margin-left: 5px;
         display: inline;
+        
     }
 
 }

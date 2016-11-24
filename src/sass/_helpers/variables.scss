@@ -16,19 +16,21 @@
 
 
 // + COLORS 
+// #937966 light
+// #1C0305 dark
 
 $color :(
     white: #F4F8FF,
     light: #E2CFB7,
-    base: #937966,
-    contrast: #C41D44,
-    dark: #1C0305,
+    base: #A0775D,
+    contrast: #EA2E5A,
+    dark: #160E0B,
     black: #000000,
 );
 
 // + FONT-FAMILIES
 
-$font-family-heading: 'Sumana', serif;
+$font-family-heading: 'Lora', serif;
 $font-family-base: 'Open Sans', sans-serif;
 $font-family-handwriting: 'Pacifico', cursive;
 

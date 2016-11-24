@@ -6,19 +6,32 @@
 .navbar-form {
     margin-left: -15px;
     margin-right: -15px;
-    padding: 10px 15px;
+    padding: 10px 45px;
     box-shadow: none;
     margin-top: 8px;
     margin-bottom: 8px;
+       
+        @include media(map-get($breakpoints, sm)){
+            margin-left: -45px;
+        }
+
+    .form-group{
+        vertical-align: initial;
+    }
 
     label {
-        @include paddingRow--base;
         display: inline-block;
         max-width: 100%;
         font-weight: normal;
         font-family: $font-family-base;
         font-size: 18px;
         color: map-get($map: $color, $key: light);
+
+            @include media(map-get($breakpoints, sm)){
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
     }
 
     .form-control {
@@ -36,6 +49,17 @@
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
         transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
         margin-bottom: 10px;
+
+            @include media(map-get($breakpoints, sm)){
+                margin-bottom: 0px;
+                padding: 20px 10px;
+                font-size: 16px;
+                width: 150%;
+
+                    @include media(map-get($breakpoints, md)){
+                        width: 200%;
+                    }
+            }
     }
 
     .btn-default {
@@ -64,5 +88,17 @@
         -ms-user-select: none;
         user-select: none;
         width: 100%;
+
+            @include media(map-get($breakpoints, sm)){
+                width: initial;
+                font-size: 16px;
+                padding: 9px 25px;
+                margin-bottom: 4px;
+                margin-left: 110px;
+                
+                    @include media(map-get($breakpoints, md)){
+                        margin-left: 210px;
+                    }
+            }
     }
 }
