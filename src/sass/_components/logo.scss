@@ -5,6 +5,9 @@
 // main site logo
 
 .site-logo{
+    @include paddingCol--xs;
+    padding-top: 15px;
+
     a{
         text-decoration: none;
     }
@@ -18,10 +21,9 @@
         margin-bottom: 0px;
     }
     .logo__secondary-text{
+        margin-top: 5px;
         display: inline;
     }
 
-    .logo__small-text{
-
-    }
 }
+

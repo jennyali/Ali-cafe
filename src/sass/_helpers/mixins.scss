@@ -19,6 +19,16 @@
 //  +   font styles
 //--------------------------------------------
 
+@mixin font-family--handwritten($textCol: map-get($map: $color, $key: white)){
+    .handwritten{
+        color: $textCol;
+        font-family: $font-family-handwriting;
+        font-size: 28px;
+        display: inline-block;    
+        margin-bottom: 0px;
+    }
+}
+
 @mixin font-color--all($textCol){
     h1,h3,h4,p,li,a{
         color: $textCol;
@@ -77,6 +87,11 @@
     color: map-get($map: $color, $key: light);
 }
 
+@mixin colorTheme--invert-light{
+    background-color: map-get($map: $color, $key: dark);
+    color: map-get($map: $color, $key: base);
+}
+
 @mixin colorTheme--contrast{
     background-color: map-get($map: $color, $key: contrast);
     color: map-get($map: $color, $key: white);
@@ -104,6 +119,10 @@
 @mixin paddingRow--base($top: 15px, $bottom: 15px){
     padding-top: $top;
     padding-bottom: $bottom;
+}
+
+@mixin paddingCol--xs{
+    padding: 0px 30px;
 }
 
 //   + media queries
