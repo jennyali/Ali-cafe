@@ -1,0 +1,28 @@
+/*===========================
+        PARALLAX
+============================*/
+
+    .parallax__img{
+        background-image: url(../images/cafe-img.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+        position: relative;
+        opacity: 0.8;
+
+        @include media(map-get($breakpoints, md)){
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 700px;
+        }
+    }
+
+    .parallax__scroll-btn{
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }

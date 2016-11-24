@@ -1,0 +1,14 @@
+/*===========================
+            FOOTER
+============================*/
+
+.footer__bottom-screen{
+    @include colorTheme--base;
+    @include font-family--base;
+    @include paddingRow--base;
+    text-align: center;
+
+        @include media(map-get($breakpoints, md)){
+            margin-bottom: 100px;
+        }
+}
