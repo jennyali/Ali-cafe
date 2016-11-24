@@ -5797,15 +5797,15 @@ button.close {
             NAV's
 ============================*/
 .navbar-default--custom {
-  background-color: #937966;
+  background-color: #A0775D;
   color: #E2CFB7;
-  border-color: #937966; }
+  border-color: #A0775D; }
   .navbar-default--custom h1 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .navbar-default--custom h3 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .navbar-default--custom h4 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .navbar-default--custom p {
     font-family: "Open Sans", sans-serif; }
   .navbar-default--custom li {
@@ -5824,11 +5824,11 @@ button.close {
   .navbar-default--custom .navbar-nav > li > a {
     color: #E2CFB7; }
     .navbar-default--custom .navbar-nav > li > a:hover, .navbar-default--custom .navbar-nav > li > a:focus {
-      color: #1C0305;
+      color: #160E0B;
       background-color: transparent; }
   .navbar-default--custom .navbar-nav > .active > a, .navbar-default--custom .navbar-nav > .active > a:hover, .navbar-default--custom .navbar-nav > .active > a:focus {
-    color: #C41D44;
-    background-color: #937966;
+    color: #EA2E5A;
+    background-color: #A0775D;
     font-weight: bold; }
   .navbar-default--custom .navbar-nav > .disabled > a, .navbar-default--custom .navbar-nav > .disabled > a:hover, .navbar-default--custom .navbar-nav > .disabled > a:focus {
     color: #ccc;
@@ -5849,10 +5849,13 @@ button.close {
 .site-logo {
   padding: 0px 30px;
   padding-top: 15px; }
+  @media screen and (min-width: 768px) {
+    .site-logo {
+      padding: 15px 0px 0px 0px; } }
   .site-logo a {
     text-decoration: none; }
   .site-logo .logo__primary-text {
-    background-color: #C41D44;
+    background-color: #EA2E5A;
     color: #F4F8FF;
     font-family: "Pacifico", cursive;
     font-size: 28px;
@@ -5861,6 +5864,7 @@ button.close {
     margin-bottom: 0px; }
   .site-logo .logo__secondary-text {
     margin-top: 5px;
+    margin-left: 5px;
     display: inline; }
 
 /*===========================
@@ -5874,7 +5878,7 @@ button.close {
 ============================*/
 .index__carousel .item--base {
   overflow: hidden;
-  background-color: #1C0305;
+  background-color: #160E0B;
   height: 600px;
   max-height: 800px; }
   @media screen and (min-width: 768px) {
@@ -5897,11 +5901,11 @@ button.close {
   bottom: 25%;
   margin-left: 30px; }
   .index__carousel .carousel-title h1 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .index__carousel .carousel-title h3 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .index__carousel .carousel-title h4 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .index__carousel .carousel-title p {
     font-family: "Open Sans", sans-serif; }
   .index__carousel .carousel-title li {
@@ -5928,7 +5932,8 @@ button.close {
 
 .index__carousel .carousel-header {
   margin: 0px;
-  font-size: 56px; }
+  font-size: 56px;
+  font-weight: bolder; }
   @media screen and (min-width: 768px) {
     .index__carousel .carousel-header {
       font-size: 72px; } }
@@ -5962,7 +5967,7 @@ button.close {
   border-radius: 50%;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: #937966; }
+  background-color: #A0775D; }
   @media screen and (min-width: 768px) {
     .index__carousel .carousel-indicators li {
       width: 15px;
@@ -5987,7 +5992,7 @@ button.close {
         BUTTONS
 ============================*/
 .btn-primary--base, .icon-delete-1 {
-  background-color: #937966;
+  background-color: #A0775D;
   color: #E2CFB7; }
 
 .btn--base, .icon-delete-1 {
@@ -6021,7 +6026,7 @@ button.close {
 ============================*/
 .dropdown-menu--base {
   background-color: #E2CFB7;
-  color: #1C0305;
+  color: #160E0B;
   position: absolute;
   top: 155%;
   left: 0;
@@ -6033,7 +6038,7 @@ button.close {
   list-style: none;
   font-size: 14px;
   text-align: left;
-  border: 1px solid #937966;
+  border: 1px solid #A0775D;
   border-top: none;
   box-shadow: none;
   background-clip: padding-box;
@@ -6042,7 +6047,7 @@ button.close {
   border-radius: 0px;
   padding: 0px; }
   .dropdown-menu--base li a:hover {
-    background-color: #937966;
+    background-color: #A0775D;
     color: #E2CFB7; }
 
 .dropdown-menu > li > a {
@@ -6051,18 +6056,18 @@ button.close {
   clear: both;
   font-weight: normal;
   line-height: 1.42857;
-  color: #1C0305;
+  color: #160E0B;
   white-space: nowrap;
-  border-top: 1px solid #937966; }
+  border-top: 1px solid #A0775D; }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-  background-color: #C41D44;
+  background-color: #EA2E5A;
   color: #F4F8FF;
   text-decoration: none;
   outline: 0; }
 
 .myActive {
-  background-color: #C41D44;
+  background-color: #EA2E5A;
   color: #F4F8FF;
   text-decoration: none;
   outline: 0; }
@@ -6080,22 +6085,30 @@ button.close {
 .navbar-form {
   margin-left: -15px;
   margin-right: -15px;
-  padding: 10px 15px;
+  padding: 10px 45px;
   box-shadow: none;
   margin-top: 8px;
   margin-bottom: 8px; }
+  @media screen and (min-width: 768px) {
+    .navbar-form {
+      margin-left: -45px; } }
+  .navbar-form .form-group {
+    vertical-align: initial; }
   .navbar-form label {
-    padding-top: 15px;
-    padding-bottom: 15px;
     display: inline-block;
     max-width: 100%;
     font-weight: normal;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
     color: #E2CFB7; }
+    @media screen and (min-width: 768px) {
+      .navbar-form label {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px; } }
   .navbar-form .form-control {
-    background-color: #1C0305;
-    color: #937966;
+    background-color: #160E0B;
+    color: #A0775D;
     font-family: "Open Sans", sans-serif;
     display: block;
     width: 100%;
@@ -6109,8 +6122,17 @@ button.close {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
     margin-bottom: 10px; }
+    @media screen and (min-width: 768px) {
+      .navbar-form .form-control {
+        margin-bottom: 0px;
+        padding: 20px 10px;
+        font-size: 16px;
+        width: 150%; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    .navbar-form .form-control {
+      width: 200%; } }
   .navbar-form .btn-default {
-    background-color: #1C0305;
+    background-color: #160E0B;
     color: #E2CFB7;
     border: 1px solid #E2CFB7; }
   .navbar-form .btn {
@@ -6134,6 +6156,16 @@ button.close {
     -ms-user-select: none;
     user-select: none;
     width: 100%; }
+    @media screen and (min-width: 768px) {
+      .navbar-form .btn {
+        width: initial;
+        font-size: 16px;
+        padding: 9px 25px;
+        margin-bottom: 4px;
+        margin-left: 110px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    .navbar-form .btn {
+      margin-left: 210px; } }
 
 /*===========================
         PARALLAX
@@ -6199,7 +6231,9 @@ button.close {
     color: #E2CFB7; }
   .header--base .small--base {
     margin: 0px;
-    color: #1C0305; }
+    font-weight: bold;
+    margin-top: 5px;
+    color: #160E0B; }
   .header--base h1 {
     margin-top: 0px;
     margin-bottom: 0px; }
@@ -6213,23 +6247,23 @@ button.close {
     bottom: 15px; }
 
 body {
-  background-color: #937966; }
+  background-color: #A0775D; }
 
 /*===========================
             FOOTER
 ============================*/
 .footer__bottom-screen {
   background-color: #E2CFB7;
-  color: #1C0305;
+  color: #160E0B;
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center; }
   .footer__bottom-screen h1 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .footer__bottom-screen h3 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .footer__bottom-screen h4 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .footer__bottom-screen p {
     font-family: "Open Sans", sans-serif; }
   .footer__bottom-screen li {
@@ -6253,13 +6287,13 @@ body {
 
 .index-content {
   padding: 0px 30px;
-  color: #1C0305; }
+  color: #160E0B; }
   .index-content h1 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .index-content h3 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .index-content h4 {
-    font-family: "Sumana", serif; }
+    font-family: "Lora", serif; }
   .index-content p {
     font-family: "Open Sans", sans-serif; }
   .index-content li {
@@ -6277,7 +6311,7 @@ body {
       .index-content .content__article {
         margin: 80px 0px 160px 0px; } }
   .index-content .article__title--xs .handwritten {
-    color: #1C0305;
+    color: #160E0B;
     font-family: "Pacifico", cursive;
     font-size: 28px;
     display: inline-block;
@@ -6298,7 +6332,7 @@ body {
         position: relative;
         transform: translateX(45px); } }
   .index-content .article__title .handwritten {
-    color: #1C0305;
+    color: #160E0B;
     font-family: "Pacifico", cursive;
     font-size: 28px;
     display: inline-block;
@@ -6321,9 +6355,12 @@ body {
           padding: 15px 30px; } }
 
 .index-parallax {
-  background-color: #1C0305; }
+  background-color: #160E0B; }
   .index-parallax .navbar__bottom-screen {
     margin: 0px; }
+    @media screen and (min-width: 768px) {
+      .index-parallax .navbar__bottom-screen {
+        padding: 20px; } }
     .index-parallax .navbar__bottom-screen .container {
       padding: 0px 30px; }
     .index-parallax .navbar__bottom-screen .list-inline {
@@ -6333,11 +6370,22 @@ body {
       list-style: none;
       margin-left: -5px;
       text-align: center; }
+      @media screen and (min-width: 768px) {
+        .index-parallax .navbar__bottom-screen .list-inline {
+          float: right;
+          position: relative;
+          bottom: -65px;
+          text-align: right;
+          padding: 0px; } }
     .index-parallax .navbar__bottom-screen .list-inline > li {
       color: #E2CFB7;
       display: inline-block;
       padding-left: 10px;
       padding-right: 10px;
       font-size: 28px; }
+      @media screen and (min-width: 768px) {
+        .index-parallax .navbar__bottom-screen .list-inline > li {
+          font-size: 20px;
+          padding-left: 14px; } }
 
 /*# sourceMappingURL=styles.css.map */

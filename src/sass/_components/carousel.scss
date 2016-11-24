@@ -51,6 +51,7 @@
     .carousel-header{
         margin:0px;
         font-size: 56px;
+        font-weight: bolder;
 
             @include media(map-get($breakpoints, sm)){
                 font-size: 72px;

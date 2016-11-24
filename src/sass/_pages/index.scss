@@ -93,6 +93,10 @@
     .navbar__bottom-screen{
         margin: 0px;
 
+            @include media(map-get($breakpoints, sm)){
+                padding: 20px;
+            }
+
         .container{
             @include paddingCol--xs;
         }
@@ -103,6 +107,15 @@
             list-style: none;
             margin-left: -5px;
             text-align: center;
+
+                @include media(map-get($breakpoints, sm)){
+                    float: right;
+                    position: relative;
+                    bottom: -65px;
+                    text-align: right;
+                    padding: 0px;
+
+                }
         }
 
         .list-inline > li {
@@ -111,6 +124,11 @@
             padding-left: 10px;
             padding-right: 10px;
             font-size: 28px;
+
+                @include media(map-get($breakpoints, sm)){
+                   font-size: 20px;
+                   padding-left: 14px;
+                }
         }
     }
 }
