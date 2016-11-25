@@ -3,7 +3,7 @@
 ============================*/
 
 .footer__bottom-screen{
-    @include colorTheme--base;
+    @include colorTheme--invert-light;
     @include font-family--base;
     @include paddingRow--base;
     text-align: center;

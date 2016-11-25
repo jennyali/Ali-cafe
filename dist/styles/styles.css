@@ -5794,6 +5794,38 @@ button.close {
     width: 970px; } }
 
 /*===========================
+        CSS ANIMATIONS
+
+=========   Contents   =======
+
+    1,   + MAP
+
+    2,   
+
+    3,    
+             
+    4,   
+
+===============================*/
+@keyframes mapZoom {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(1.4); } }
+
+.map--zoomIn {
+  transform: scale(1.4); }
+
+@keyframes mapShrink {
+  from {
+    transform: scale(1.4); }
+  to {
+    transform: scale(1); } }
+
+.map--zoomOut {
+  transform: scale(1); }
+
+/*===========================
             NAV's
 ============================*/
 .navbar-default--custom {
@@ -5892,15 +5924,40 @@ button.close {
     color: white;
     font-size: 120px;
     line-height: 100px;
-    margin-top: 160px;
-    margin-bottom: 30px;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 56px;
+    font-weight: bolder; }
     .jumbotron--base .jumbotron__title .handwritten {
       color: #F4F8FF;
       font-family: "Pacifico", cursive;
       font-size: 28px;
       display: inline-block;
       margin-bottom: 0px; }
+    @media screen and (min-width: 768px) {
+      .jumbotron--base .jumbotron__title {
+        font-size: 72px;
+        margin-top: 20px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    .jumbotron--base .jumbotron__title {
+      font-size: 80px;
+      margin-top: 160px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) and (min-width: 1200px) {
+    .jumbotron--base .jumbotron__title {
+      font-size: 120px;
+      margin-top: 160px;
+      margin-bottom: 30px; } }
+  .jumbotron--base .jumbotron__title--small {
+    position: relative;
+    top: 45px; }
+    @media screen and (min-width: 768px) {
+      .jumbotron--base .jumbotron__title--small {
+        top: 30px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    .jumbotron--base .jumbotron__title--small {
+      top: 20px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) and (min-width: 1200px) {
+    .jumbotron--base .jumbotron__title--small {
+      top: 0px; } }
 
 /*===========================
         CAROUSEL
@@ -6300,14 +6357,14 @@ button.close {
     bottom: 15px; }
 
 body {
-  background-color: #A0775D; }
+  background-color: #E2CFB7; }
 
 /*===========================
             FOOTER
 ============================*/
 .footer__bottom-screen {
-  background-color: #E2CFB7;
-  color: #160E0B;
+  background-color: #160E0B;
+  color: #A0775D;
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center; }
@@ -6450,35 +6507,90 @@ body {
   background: linear-gradient(to bottom, white 0%, rgba(246, 246, 246, 0.7) 47%, rgba(237, 237, 237, 0.37) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 ); }
 
-.our-shops-content {
-  padding: 60px 0px 180px 0px; }
-  .our-shops-content h1 {
-    font-family: "Lora", serif; }
-  .our-shops-content h3 {
-    font-family: "Lora", serif; }
-  .our-shops-content h4 {
-    font-family: "Lora", serif; }
-  .our-shops-content p {
-    font-family: "Open Sans", sans-serif; }
-  .our-shops-content li {
-    font-family: "Open Sans", sans-serif; }
-  .our-shops-content a {
-    font-family: "Open Sans", sans-serif; }
-  .our-shops-content .lead--custom {
-    font-family: "Pacifico", cursive; }
-  .our-shops-content h1, .our-shops-content h3, .our-shops-content h4, .our-shops-content p, .our-shops-content li, .our-shops-content a {
-    color: #160E0B; }
-  .our-shops-content .lead--custom {
-    color: #160E0B; }
-  .our-shops-content h3 {
-    font-weight: bold;
-    font-size: 36px; }
-  .our-shops-content h4 {
-    font-weight: bold;
-    font-size: 24px;
-    margin-top: 30px; }
-  .our-shops-content p {
-    font-size: 16px;
-    line-height: 2; }
+.our-shops-content h1 {
+  font-family: "Lora", serif; }
+
+.our-shops-content h3 {
+  font-family: "Lora", serif; }
+
+.our-shops-content h4 {
+  font-family: "Lora", serif; }
+
+.our-shops-content p {
+  font-family: "Open Sans", sans-serif; }
+
+.our-shops-content li {
+  font-family: "Open Sans", sans-serif; }
+
+.our-shops-content a {
+  font-family: "Open Sans", sans-serif; }
+
+.our-shops-content .lead--custom {
+  font-family: "Pacifico", cursive; }
+
+.our-shops-content h1, .our-shops-content h3, .our-shops-content h4, .our-shops-content p, .our-shops-content li, .our-shops-content a {
+  color: #160E0B; }
+
+.our-shops-content .lead--custom {
+  color: #160E0B; }
+
+@media screen and (min-width: 768px) {
+  .our-shops-content {
+    padding: 60px 0px 0px 0px; } }
+
+.our-shops-content h3 {
+  font-weight: bold;
+  font-size: 36px; }
+
+.our-shops-content h4 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 50px; }
+
+.our-shops-content p {
+  font-size: 16px;
+  line-height: 2; }
+
+.our-shops-content .location-text__wrapper {
+  padding: 0px 30px 30px 30px; }
+  @media screen and (min-width: 768px) {
+    .our-shops-content .location-text__wrapper {
+      transform: translateY(10%);
+      padding: 0px 15px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    .our-shops-content .location-text__wrapper {
+      transform: translateY(20%); } }
+
+@media screen and (min-width: 768px) {
+  .our-shops-content .wrapper--upper {
+    padding: 0px 45px; } }
+
+.our-shops-content .our-shops__location {
+  margin-bottom: 30px; }
+  @media screen and (min-width: 768px) {
+    .our-shops-content .our-shops__location {
+      margin-bottom: 180px; } }
+
+.our-shops-content .location-img__wrapper {
+  margin: 15px;
+  height: 250px;
+  overflow: hidden; }
+  @media screen and (min-width: 768px) {
+    .our-shops-content .location-img__wrapper {
+      margin: 30px;
+      height: 100%; } }
+
+.our-shops-content .shop-map {
+  width: 100%;
+  position: relative;
+  transition: transform 2s; }
+
+.our-shops-content .map-marker {
+  position: absolute;
+  z-index: 3;
+  width: 50px;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%); }
 
 /*# sourceMappingURL=styles.css.map */
