@@ -5870,8 +5870,37 @@ button.close {
 /*===========================
         JUMBOTRON
 ============================*/
-.jumbotron--base {
+.jumbotron--alt {
   padding: 0px; }
+
+.jumbotron--base {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #160E0B;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0px -200px 300px 200px rgba(22, 14, 11, 0.3); }
+  .jumbotron--base .jumbotron__title {
+    font-family: "Lora", serif;
+    z-index: 15;
+    padding-left: 0;
+    list-style: none;
+    text-align: left;
+    color: white;
+    font-size: 120px;
+    line-height: 100px;
+    margin-top: 160px;
+    margin-bottom: 30px;
+    font-weight: bold; }
+    .jumbotron--base .jumbotron__title .handwritten {
+      color: #F4F8FF;
+      font-family: "Pacifico", cursive;
+      font-size: 28px;
+      display: inline-block;
+      margin-bottom: 0px; }
 
 /*===========================
         CAROUSEL
@@ -5886,7 +5915,7 @@ button.close {
       height: 100%; } }
 
 .index__carousel .item__img--base {
-  opacity: 0.5; }
+  opacity: 0.7; }
 
 .index__carousel .carousel-title {
   position: absolute;
@@ -5987,6 +6016,29 @@ button.close {
       height: 15px;
       margin: 2px;
       background-color: #E2CFB7; } }
+
+.carousel-fade .carousel-inner .item {
+  transition-property: opacity; }
+
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0; }
+
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1; }
+
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  transform: translate3d(0, 0, 0); }
+
+.carousel-fade .carousel-control {
+  z-index: 2; }
 
 /*===========================
         BUTTONS
@@ -6190,7 +6242,8 @@ button.close {
   position: absolute;
   bottom: 0px;
   left: 50%;
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  cursor: pointer; }
 
 /*===========================
            VARIABLES
@@ -6387,5 +6440,45 @@ body {
         .index-parallax .navbar__bottom-screen .list-inline > li {
           font-size: 20px;
           padding-left: 14px; } }
+
+/*===========================
+          Our Shop
+============================*/
+#ourShops {
+  background: white;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(47%, rgba(246, 246, 246, 0.7)), color-stop(100%, rgba(237, 237, 237, 0.37)));
+  background: linear-gradient(to bottom, white 0%, rgba(246, 246, 246, 0.7) 47%, rgba(237, 237, 237, 0.37) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 ); }
+
+.our-shops-content {
+  padding: 60px 0px 180px 0px; }
+  .our-shops-content h1 {
+    font-family: "Lora", serif; }
+  .our-shops-content h3 {
+    font-family: "Lora", serif; }
+  .our-shops-content h4 {
+    font-family: "Lora", serif; }
+  .our-shops-content p {
+    font-family: "Open Sans", sans-serif; }
+  .our-shops-content li {
+    font-family: "Open Sans", sans-serif; }
+  .our-shops-content a {
+    font-family: "Open Sans", sans-serif; }
+  .our-shops-content .lead--custom {
+    font-family: "Pacifico", cursive; }
+  .our-shops-content h1, .our-shops-content h3, .our-shops-content h4, .our-shops-content p, .our-shops-content li, .our-shops-content a {
+    color: #160E0B; }
+  .our-shops-content .lead--custom {
+    color: #160E0B; }
+  .our-shops-content h3 {
+    font-weight: bold;
+    font-size: 36px; }
+  .our-shops-content h4 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 30px; }
+  .our-shops-content p {
+    font-size: 16px;
+    line-height: 2; }
 
 /*# sourceMappingURL=styles.css.map */

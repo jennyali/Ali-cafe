@@ -2,6 +2,37 @@
         JUMBOTRON
 ============================*/
 
-.jumbotron--base{
+.jumbotron--alt{
     padding: 0px;
+}
+
+.jumbotron--base {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: map-get($map: $color, $key: dark);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: inset 0px -200px 300px 200px rgba(22,14,11,0.3);
+    -moz-box-shadow: inset 0px -200px 300px 200px rgba(22,14,11,0.3);
+    box-shadow: inset 0px -200px 300px 200px rgba(22,14,11,0.3);
+
+    .jumbotron__title{
+        font-family: $font-family-heading;
+        z-index: 15;
+        padding-left: 0;
+        list-style: none;
+        text-align: left;
+        color: white;
+        font-size: 120px;
+        line-height: 100px;
+        margin-top: 160px;
+        margin-bottom: 30px;
+        font-weight: bold;
+
+        @include font-family--handwritten;
+
+    }
 }
