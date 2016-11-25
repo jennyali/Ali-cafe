@@ -40,12 +40,27 @@ var $ourShopJumbo = $('#ourShops').find('.jumbotron--base');
 var $menusJumbo = $('#menus').find('.jumbotron--base');
 var $buyCoffeeJumbo = $('#buyCoffee').find('.jumbotron--base');
 
+//-- Our shops
+var $shopMap = $('.location-img__wrapper');
+
 //EVENTS
+
+
 
 $(window).on('resize', function(event){         
     windowWidth = window.innerWidth;
     moveHeaderInline();
 });
+
+$shopMap.on({
+    'mouseenter': function(){
+        mapZoomIn(this);
+    },
+
+    'mouseleave': function(){
+        mapZoomOut(this);
+    }
+})
 
 $burgerMenuBtn.on({
     'click': function(event){
@@ -89,6 +104,17 @@ $scrollTop.on({
 
 // FUNCTIONS
 
+function mapZoomIn(selector){
+    $(selector).find('.shop-map').removeClass('map--zoomOut');
+    $(selector).find('.shop-map').removeClass('map--zoomIn');
+    $(selector).find('.shop-map').addClass('map--zoomIn');
+}
+
+function mapZoomOut(selector){
+    $(selector).find('.shop-map').removeClass('map--zoomOut');
+    $(selector).find('.shop-map').addClass('map--zoomOut');
+}
+
 function setJumbotronBg(selector, backgroundImg){
     selector.css({'background-image' : backgroundImg});
 }
@@ -130,8 +156,10 @@ function moveHeaderInline(){
 
 // FUNCTION CALLS
 
+
 $('.carousel').carousel();
 moveHeaderInline();
+ $('[data-toggle="tooltip"]').tooltip(); 
 
 setJumbotronBg($ourShopJumbo, backgroundImgs[0]);
 setJumbotronBg($menusJumbo, backgroundImgs[1]);

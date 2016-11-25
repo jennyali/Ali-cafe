@@ -28,11 +28,44 @@
         color: white;
         font-size: 120px;
         line-height: 100px;
-        margin-top: 160px;
-        margin-bottom: 30px;
         font-weight: bold;
 
         @include font-family--handwritten;
 
+        font-size: 56px;
+        font-weight: bolder;
+
+            @include media(map-get($breakpoints, sm)){
+                font-size: 72px;
+                margin-top: 20px;
+
+                @include media(map-get($breakpoints, md)){
+                    font-size: 80px;
+                    margin-top: 160px;
+
+                    @include media(map-get($breakpoints, lg)){
+                        font-size: 120px;
+                        margin-top: 160px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+
+    }
+
+    .jumbotron__title--small{
+        position: relative;
+        top: 45px;
+            @include media(map-get($breakpoints, sm)){
+                top: 30px;
+
+                @include media(map-get($breakpoints, md)){
+                    top: 20px;
+
+                    @include media(map-get($breakpoints, lg)){
+                        top: 0px;
+                    }
+                }
+            }
     }
 }

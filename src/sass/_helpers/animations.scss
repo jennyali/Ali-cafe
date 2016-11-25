@@ -1,0 +1,36 @@
+/*===========================
+        CSS ANIMATIONS
+
+=========   Contents   =======
+
+    1,   + MAP
+
+    2,   
+
+    3,    
+             
+    4,   
+
+===============================*/
+
+// + MAP
+
+@keyframes mapZoom {
+    from {transform: scale(1);}
+    to {transform: scale(1.4);}
+}
+
+.map--zoomIn{
+    transform: scale(1.4);
+}
+//-----------------
+
+@keyframes mapShrink {
+    from {transform: scale(1.4);}
+    to {transform: scale(1);}
+}
+
+.map--zoomOut{
+    transform: scale(1);
+}
+//-----------------

@@ -9,7 +9,10 @@
 .our-shops-content{
     @include font-family--base;
     @include font-color--all(map-get($color, dark));
-    padding: 60px 0px 180px 0px;
+
+        @include media(map-get($breakpoints, sm)){
+            padding: 60px 0px 0px 0px;
+        }
 
     h3{
         font-weight: bold;
@@ -19,12 +22,65 @@
     h4{
         font-weight: bold;
         font-size: 24px;
-        margin-top: 30px;
+        margin-top: 50px;
     }
 
     p{
         font-size: 16px;
         line-height: 2;
+    }
+
+    .location-text__wrapper{
+        padding: 0px 30px 30px 30px;
+
+            @include media(map-get($breakpoints, sm)){
+                transform: translateY(10%);
+                padding: 0px 15px;
+
+                    @include media(map-get($breakpoints, md)){
+                        transform: translateY(20%);
+            }
+        }
+    }
+
+    .wrapper--upper{
+        @include media(map-get($breakpoints, sm)){
+            padding: 0px 45px;
+        }
+    }
+
+    .our-shops__location{
+        margin-bottom: 30px;
+
+            @include media(map-get($breakpoints, sm)){
+                margin-bottom: 180px;
+            }
+    }
+
+    .location-img__wrapper{
+        margin: 15px;
+        height: 250px;
+        overflow: hidden;
+
+            @include media(map-get($breakpoints, sm)){
+                margin: 30px;
+                height: 100%;
+            }
+    }
+
+    .shop-map{
+        width: 100%;
+        position: relative;
+        transition: transform 2s;
+    }
+
+    .map-marker{
+        position: absolute;
+        z-index: 3;
+        width: 50px;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 }
