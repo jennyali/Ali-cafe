@@ -64,9 +64,9 @@
 
     <section class="tab-content">
         <!-- INDEX/ HOME PAGE -->
-        <main id="index" class="tab-pane fade in active">
-            <section class="jumbotron jumbotron--base">
-                <div id="indexCarousel" class="carousel slide index__carousel" data-ride="carousel">
+        <main id="index" class="tab-pane fade">
+            <section class="jumbotron jumbotron--alt">
+                <div id="indexCarousel" class="carousel slide carousel-fade index__carousel" data-ride="carousel">
                       <!-- DOTS -->
                     <ol class="carousel-indicators">
                         <li data-target="#indexCarousel" data-slide-to="0" class="active"></li>
@@ -175,10 +175,15 @@
                 </section>
         </main>     <!-- END OF PAGE -->
 
-        <main id="ourShops" class="tab-pane fade">
-            <section class="jumbotron">
+        <main id="ourShops" class="tab-pane fade in active">    <!-- ourShops sub page -->
+            <section class="jumbotron jumbotron--base">
                 <div class="container">
-                    <h1><small>visit</small><br>Our Shops</h1>
+                    <h1 class="jumbotron__title">
+                        <small class="jumbotron__title--small handwritten">
+                            visit
+                        </small>
+                        <br>Our Shops
+                    </h1>
                 </div>
             </section>
             <section class="container our-shops-content">
@@ -197,10 +202,10 @@
                     </section>
                 </article>
                 <article class="row">
-                    <section class="col-md-6">
+                    <section class="col-push-md-6">
                         <div>[map]</div>
                     </section>
-                    <section class="col-md-6">
+                    <section class="col-pull-md-6">
                         <h3>Dartford</h3>
                         <h4>Address</h4>
                         <p>3 Market St,<br>Dartford DA1 1EY</p>
@@ -213,10 +218,13 @@
             </section>
         </main>
 
-        <main id="menus" class="tab-pane fade">
-            <section class="jumbotron">
+        <main id="menus" class="tab-pane fade">         <!-- menus sub page -->
+            <section class="jumbotron jumbotron jumbotron--base">
                 <div class="container">
-                    <h1><small>check</small><br>Our Menu</h1>
+                    <h1 class="jumbotron__title">
+                        <small class="jumbotron__title--small handwritten">check</small>
+                        <br>Our Menu
+                    </h1>
                 </div>
             </section>
             <section class="container">
@@ -310,10 +318,13 @@
             </section>
         </main>
 
-        <main id="buyCoffee" class="tab-pane fade">
-            <section class="jumbotron">
+        <main id="buyCoffee" class="tab-pane fade">         <!-- buyCoffee sub page -->
+            <section class="jumbotron jumbotron jumbotron--base">
                 <div class="container">
-                    <h1><small>order</small><br>Coffee Blends</h1>
+                    <h1 class="jumbotron__title">
+                        <small class="jumbotron__title--small handwritten">order</small>
+                        <br>Coffee Blends
+                    </h1>
                 </div>
             </section>
         </main>
@@ -321,14 +332,15 @@
 
 
 
-    <footer class="container visible-xs-sm footer__bottom-screen">
+    <footer class="container hidden-md-lg footer__bottom-screen">
         <p>2023 Ali's Cafe, created by Jennifer Ali</p>
     </footer>
 
   <script src="../node_modules/jquery/dist/jquery.js"></script>
   <script src="scripts/lodash.js"></script>
   <script src="scripts/bootstrap.js"></script>
-  <script src="scripts/main.js"></script>      
+  <script src="scripts/main.js"></script>
+
 </body>
 
 </html>
