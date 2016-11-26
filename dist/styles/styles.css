@@ -6556,7 +6556,7 @@ body {
   @media screen and (min-width: 768px) {
     .our-shops-content .location-text__wrapper {
       transform: translateY(10%);
-      padding: 0px 15px; } }
+      padding: 0px 30px; } }
   @media screen and (min-width: 768px) and (min-width: 992px) {
     .our-shops-content .location-text__wrapper {
       transform: translateY(20%); } }

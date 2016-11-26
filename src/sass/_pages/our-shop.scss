@@ -35,7 +35,7 @@
 
             @include media(map-get($breakpoints, sm)){
                 transform: translateY(10%);
-                padding: 0px 15px;
+                padding: 0px 30px;
 
                     @include media(map-get($breakpoints, md)){
                         transform: translateY(20%);
