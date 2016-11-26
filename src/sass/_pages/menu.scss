@@ -1,0 +1,102 @@
+/*===========================
+            MENU
+============================*/
+
+#menus{
+    @include backgroundGradient--body;
+}
+
+.menu-content{
+    padding: 45px;
+        @include media(map-get($breakpoints, sm)){
+            padding: 0px 15px;
+        }
+
+    //nav nav-pills//
+    .menu-content__nav{}
+
+    .menu-content__nav-pills{
+        padding: 0px 15px;
+
+        .active{
+            .nav-pill__list-item{
+                background: none;
+                color: map-get($map: $color, $key: dark);
+                border-radius: 0px;
+            }
+        }
+    }
+
+    li{
+        width: 100%;
+
+            @include media(map-get($breakpoints, sm)){
+                width: initial;
+            }
+    }
+
+    .nav-pill__list-item{
+        color: map-get($map: $color, $key: base);
+        border-left: none;
+        text-transform: uppercase;
+        font-family: $font-family-heading;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 0px;
+
+            &:hover{background: none;}
+    }
+
+    .nav-pill__divider{
+        font-size: 24px;
+        font-weight: normal;
+        margin-left: 5px;
+    }
+
+    a.nav-pill__list-item[href="#coffeeBlends"]{
+        @include media(map-get($breakpoints, sm)){
+            padding: 9px 0px 9px 7px;
+        }
+    }
+
+    //tabbed content (2x diffrent tabs)//
+    .menu-content__main{
+        @include font-family--base;
+        @include font-color--all(map-get($color, dark));
+    }
+
+
+    //section of tabbed content//
+    .tab__section{}
+
+    .tab__title{
+        padding-bottom: 30px;
+    }
+
+    .tab__title__header{
+        text-transform: uppercase;
+        font-family: $font-family-heading;
+        font-size: 36px;
+        font-weight: bold;
+        border-bottom: 2px solid map-get($map: $color, $key: dark);
+    }
+
+    .tab__title__small-text{
+        font-size: 16px;
+    }
+
+    //small segments within section of tabbed content//
+    .menu-segment{}
+
+    .menu-segment__title{
+        font-weight: bold;
+    }
+
+    .menu-segment__price{
+        margin: 0px;
+        padding: 10px 0px 25px 0px;
+        font-style: italic;
+        font-size: 16px;
+        border-bottom: 1px dashed map-get($map: $color, $key: dark);
+    }
+}
