@@ -6664,7 +6664,8 @@ body {
   .menu-content .tab__title__small-text {
     font-size: 16px; }
   .menu-content .menu-segment__title {
-    font-weight: bold; }
+    font-weight: bold;
+    text-transform: uppercase; }
   .menu-content .menu-segment__price {
     margin: 0px;
     padding: 10px 0px 25px 0px;

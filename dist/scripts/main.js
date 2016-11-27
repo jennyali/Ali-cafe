@@ -114,6 +114,29 @@ var $buyCoffeeJumbo = $('#buyCoffee').find('.jumbotron--base');
 //-- Our shops
 var $shopMap = $('.location-img__wrapper');
 
+//-- menu page
+var $tabSectionFoodTab = $('.tab__section--food-tab');
+var $tabSectionCoffeeTab =$('.tab__section--coffee-tab');
+
+//------ TEMPLATES ---------//
+
+function tabTitleTemplate(object){
+    return `
+            <div class="col-md-12 tab__title" data-id="${object["id"]}" data-category="${object["category"]}">
+                <h3 class="page-header tab__title__header">${object["name"]}</h3>
+                <p class="tab__title__small-text"><em>${object["description"]}</em></p>
+            </div>`
+};
+
+function menuSegmentTemplate(object){
+    return `
+            <div class="col-md-4 menu-segment" data-id="${object["id"]}" data-category="${object["category"]}">
+                <h4 class="menu-segment__title">${object["name"]}</h4>
+                <p class="menu-segment__price">$${object["price"]}</p>
+            </div>`
+};
+
+
 //------- EVENTS ----------//
 
 $(window).on('resize', function(event){         
@@ -222,6 +245,28 @@ function moveHeaderInline(){
     }
 }
 
+function tabSectionBuilder(){
+    var template = "";
+    _.each(coffeeMenuCategories, function(menuCategory){
+        template += tabTitleTemplate(menuCategory);
+        var menuFiltered = _.filter(menuList, ['category', menuCategory['category']]);
+        _.each(menuFiltered, function(menuItem){
+            template += menuSegmentTemplate(menuItem);
+        });
+    });
+    $(template).appendTo($tabSectionFoodTab);
+}
+
+function tabSectionBuilderTwo(array, selector){     //chosen menu tab builder
+    var menuFiltered = _.filter(menuList, ['category', array['category']]);
+    var template = "";
+    template += tabTitleTemplate(array);
+    _.each(menuFiltered, function(menuItem){
+        template += menuSegmentTemplate(menuItem);
+    });
+    $(template).appendTo(selector);
+}
+
 
 //------- FUNCTION CALLS ----------//
 
@@ -232,4 +277,11 @@ moveHeaderInline();
 setJumbotronBg($ourShopJumbo, backgroundImgs[0]);
 setJumbotronBg($menusJumbo, backgroundImgs[1]);
 setJumbotronBg($buyCoffeeJumbo, backgroundImgs[2]);
+
+tabSectionBuilderTwo(coffeeMenuCategories[0], $tabSectionFoodTab);
+tabSectionBuilderTwo(coffeeMenuCategories[1], $tabSectionFoodTab);
+tabSectionBuilderTwo(coffeeMenuCategories[2], $tabSectionCoffeeTab);
+tabSectionBuilderTwo(coffeeMenuCategories[3], $tabSectionCoffeeTab);
+
+
 });
