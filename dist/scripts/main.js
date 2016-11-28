@@ -118,6 +118,10 @@ var $shopMap = $('.location-img__wrapper');
 var $tabSectionFoodTab = $('.tab__section--food-tab');
 var $tabSectionCoffeeTab =$('.tab__section--coffee-tab');
 
+//-- buyCoffee page
+var $iconArrow44 = $('.icon-arrow-40');
+var $wrapperNavTitle =$('.wrapper__nav__title');
+
 //------ TEMPLATES ---------//
 
 function tabTitleTemplate(object){
@@ -143,6 +147,12 @@ $(window).on('resize', function(event){
     windowWidth = window.innerWidth;
     moveHeaderInline();
 });
+
+$wrapperNavTitle.on({
+    'click': function(){
+        $(this).find('.icon-arrow-40').toggleClass('icon-arrow-40--rotate');
+    }
+})
 
 $shopMap.on({
     'mouseenter': function(){

@@ -6188,6 +6188,17 @@ button.close {
   color: #F4F8FF;
   font-size: 42px; }
 
+.icon-arrow-40 {
+  display: inline-block;
+  transform: rotate(90deg);
+  transform-origin: center;
+  margin-left: 10px;
+  transition: transform 0.25s; }
+
+.icon-arrow-40--rotate {
+  transform: rotate(0deg);
+  transform-origin: center; }
+
 /*===========================
             FORMS
 ============================*/
@@ -6675,6 +6686,136 @@ body {
 
 /*===========================
         BUY-COFFEE
-============================*/
+============================
+@extends*/
+#buyCoffee {
+  background: white;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(47%, rgba(246, 246, 246, 0.7)), color-stop(100%, rgba(237, 237, 237, 0.37)));
+  background: linear-gradient(to bottom, white 0%, rgba(246, 246, 246, 0.7) 47%, rgba(237, 237, 237, 0.37) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 ); }
+
+.shop-container .wrapper__nav {
+  background-color: #160E0B;
+  color: #E2CFB7;
+  min-height: 500px;
+  padding: 0px; }
+  .shop-container .wrapper__nav h1 {
+    font-family: "Lora", serif; }
+  .shop-container .wrapper__nav h3 {
+    font-family: "Lora", serif; }
+  .shop-container .wrapper__nav h4 {
+    font-family: "Lora", serif; }
+  .shop-container .wrapper__nav p {
+    font-family: "Open Sans", sans-serif; }
+  .shop-container .wrapper__nav li {
+    font-family: "Open Sans", sans-serif; }
+  .shop-container .wrapper__nav a {
+    font-family: "Open Sans", sans-serif; }
+  .shop-container .wrapper__nav .lead--custom {
+    font-family: "Pacifico", cursive; }
+  .shop-container .wrapper__nav a {
+    background-color: #160E0B;
+    color: #E2CFB7;
+    display: block;
+    padding: 15px 10px;
+    text-decoration: none; }
+    .shop-container .wrapper__nav a:hover {
+      background-color: #38241c; }
+  .shop-container .wrapper__nav .active a {
+    background-color: #E2CFB7;
+    color: #160E0B; }
+
+.shop-container .wrapper__nav__title {
+  text-transform: uppercase; }
+  .shop-container .wrapper__nav__title span {
+    margin-left: 15px; }
+
+.shop-container .wrapper__nav__list-item a {
+  background-color: #271914;
+  padding: 15px; }
+
+.shop-container .wrapper__shop-section {
+  background-color: #E2CFB7;
+  color: #160E0B;
+  min-height: 500px;
+  border-top: 1px solid #A0775D; }
+  .shop-container .wrapper__shop-section h1 {
+    font-family: "Lora", serif; }
+  .shop-container .wrapper__shop-section h3 {
+    font-family: "Lora", serif; }
+  .shop-container .wrapper__shop-section h4 {
+    font-family: "Lora", serif; }
+  .shop-container .wrapper__shop-section p {
+    font-family: "Open Sans", sans-serif; }
+  .shop-container .wrapper__shop-section li {
+    font-family: "Open Sans", sans-serif; }
+  .shop-container .wrapper__shop-section a {
+    font-family: "Open Sans", sans-serif; }
+  .shop-container .wrapper__shop-section .lead--custom {
+    font-family: "Pacifico", cursive; }
+
+.shop-container .shop-section__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid #A0775D; }
+
+.shop-container .tab__title {
+  text-transform: capitalize;
+  font-weight: bold; }
+
+.shop-container .tab__description {
+  color: #A0775D; }
+
+.shop-container .tab__list-item__name {
+  background-color: #E2CFB7;
+  color: #160E0B;
+  text-transform: capitalize;
+  border: none;
+  border-bottom: 1px solid #A0775D;
+  border-radius: 0px;
+  padding: 20px 15px;
+  margin: 0px 15px; }
+
+.shop-container .wrapper__shopping-cart {
+  background-color: #E2CFB7;
+  color: #160E0B;
+  min-height: 500px;
+  border: 1px solid #A0775D;
+  padding: 0px; }
+  .shop-container .wrapper__shopping-cart h1 {
+    font-family: "Lora", serif; }
+  .shop-container .wrapper__shopping-cart h3 {
+    font-family: "Lora", serif; }
+  .shop-container .wrapper__shopping-cart h4 {
+    font-family: "Lora", serif; }
+  .shop-container .wrapper__shopping-cart p {
+    font-family: "Open Sans", sans-serif; }
+  .shop-container .wrapper__shopping-cart li {
+    font-family: "Open Sans", sans-serif; }
+  .shop-container .wrapper__shopping-cart a {
+    font-family: "Open Sans", sans-serif; }
+  .shop-container .wrapper__shopping-cart .lead--custom {
+    font-family: "Pacifico", cursive; }
+
+.shop-container .div__my-order {
+  border-bottom: 1px solid #A0775D; }
+
+.shop-container .my-order__title {
+  background-color: #E2CFB7;
+  color: #160E0B;
+  border: none; }
+
+.shop-container .div__subtotal {
+  border-bottom: 1px solid #A0775D; }
+
+.shop-container .subtotal__title {
+  background-color: #E2CFB7;
+  color: #160E0B;
+  border: none;
+  border-top: 2px solid #160E0B;
+  margin: 0px 15px; }
+
+.shop-container .div__place-order {
+  padding: 15px; }
 
 /*# sourceMappingURL=styles.css.map */
