@@ -6126,9 +6126,24 @@ button.close {
   user-select: none;
   padding-top: 15px; }
 
-.icon-delete-1 {
-  font-size: 26px;
-  padding: 0px 5px 5px 0px; }
+.btn-primary {
+  background-color: #160E0B;
+  color: #E2CFB7;
+  font-family: "Lora", serif;
+  text-transform: uppercase;
+  padding: 15px;
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none; }
+  .btn-primary:hover {
+    background-color: #38241c;
+    border: none;
+    outline: none; }
+  .btn-primary:focus {
+    background-color: #271914;
+    border: none;
+    outline: none; }
 
 /*===========================
         DROPDOWN MENU
@@ -6198,6 +6213,10 @@ button.close {
 .icon-arrow-40--rotate {
   transform: rotate(0deg);
   transform-origin: center; }
+
+.icon-delete-1 {
+  font-size: 26px;
+  padding: 0px 5px 5px 0px; }
 
 /*===========================
             FORMS
