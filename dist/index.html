@@ -228,7 +228,7 @@
             </section>
         </main>
 
-        <main id="menus" class="tab-pane fade in active">         <!-- menus sub page -->
+        <main id="menus" class="tab-pane fade">         <!-- menus sub page -->
             <section class="jumbotron jumbotron jumbotron--base">
                 <div class="container">
                     <h1 class="jumbotron__title">
@@ -259,13 +259,96 @@
             </section>
         </main>
 
-        <main id="buyCoffee" class="tab-pane fade">         <!-- buyCoffee sub page -->
+        <main id="buyCoffee" class="tab-pane fade in active">         <!-- buyCoffee sub page -->
             <section class="jumbotron jumbotron jumbotron--base">
                 <div class="container">
                     <h1 class="jumbotron__title">
                         <small class="jumbotron__title--small handwritten">order</small>
                         <br>Coffee Blends
                     </h1>
+                </div>
+            </section>
+
+            <section class="shop-container container">
+                <div class="shop-wrapper row">
+                    <nav class="col-md-2 wrapper__nav"> <!-- left aside nav -->
+                        <ul class="list-unstyled">
+                            <li><a href="#coffeeBlendsNav" data-toggle="collapse">coffee blends<span class="icon-arrow-40"></span></a></li>
+                            <div id="coffeeBlendsNav" class= "collapse in">
+                                <ul class="list-unstyled">
+                                    <li class="active"><a data-toggle="tab" href="#houseBlendsTab">House Blends</a></li>
+                                    <li><a data-toggle="tab" href="#globalBlendsTab">Global Blends</a></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </nav>
+                    <section class="col-md-7 wrapper__shop-section"> <!-- middle section shopping -->
+                        <h1 class="page-header shop-section__title text-center">coffee blends</h1>
+                        <article class="tab-content shop-section__content">
+
+                            <div id="houseBlendsTab" class="tab-pane fade in active tab__section">
+                                <h3 class="tab__title text-center">house blends</h3>
+                                <p class="tab__description text-center">This is a section of your menu. Give your section a brief description</p>
+                                <ul class="tab__list list-unstyled list-group">
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
+                                    </li>       
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
+                                    </li>    
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
+                                    </li>                         
+                                </ul>
+                            </div>
+
+                            <div id="globalBlendsTab" class="tab-pane fade">
+
+                            </div>
+                        </article>
+                    </section>
+                    <section class="col-md-3 wrapper__shopping-cart"> <!-- right aside shopping cart -->
+                        <div class="div__my-order">
+                            <li class="list-group-item my-order__title">My Order<span class="badge"><span class="my-order__quanitity">0</span> items</span></li>
+                        </div>
+                        <div class="div__subtotal">
+                            <span class="icon-bag"></span>
+                            <li class="list-group-item subtotal__title">Subtotal<span class="badge">$<span class="subtotal__quanitity">0</span></span></li>
+                        </div>
+                        <div class="div__place-order">
+                            <div>
+                                <p><span class="icon-add-2"></span>Special requests</p>
+                            </div>
+                            <p>pickup only</p>
+                            <p>for:ASAP(in 15 minutes)</p>
+                            <a href="#" data-toggle="tooltip" data-placement="left" title="Cart is empty. Add items to kick off your order."><button class="btn__order-now">order now<span class="icon-arrow-68"></span></button></a>
+                        </div>
+                    </section>
+                </div>
+                <div id="modalShoppingCart" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close icon-delete-2" data-dismiss="modal"></button>
+                                <h3>Barista’s Blend</h3>
+                                <p>$<span>9</span></p>
+                            </div>
+                            <div class="modal-body">
+                                <p class="page-header">Special requests?</p>
+                                <a href="#modalInput" data-toggle="collapse"><span class="icon-add-2"></span>Add them here. We’ll do our best to make it happen</a>
+                                <input id="modalInput" class="form-control collapse" type="text" id="comment"></input>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-default"><span class="icon-add-2"></span>add to my order</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
