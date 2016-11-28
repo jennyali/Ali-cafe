@@ -7,3 +7,16 @@
     color: map-get($map: $color, $key: white);
     font-size: 42px;
 }
+
+.icon-arrow-40{
+    display: inline-block;
+    transform: rotate(90deg);
+    transform-origin: center;
+    margin-left: 10px;
+    transition: transform 0.25s;
+}
+
+.icon-arrow-40--rotate{
+    transform: rotate(0deg);
+    transform-origin: center;
+}

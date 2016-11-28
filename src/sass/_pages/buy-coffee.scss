@@ -1,40 +1,127 @@
 /*===========================
         BUY-COFFEE
-============================*/
+============================
+@extends*/
 
-#buyCoffee{}
+//============================
+
+#buyCoffee{
+    @include backgroundGradient--body;
+}
 
 .shop-container{
 
     .shop-wrapper{}
 
-    .wrapper__nav{}
+    .wrapper__nav{
+        @include colorTheme--invert;
+        @include font-family--base;
+        min-height: 500px;
+        padding: 0px;
 
-    .wrapper__shop-section{}
+        a{
+            @include colorTheme--invert;
+            display: block;
+            padding: 15px 10px;
+            text-decoration: none;
 
-    .shop-section__title{}
+            &:hover{
+                background-color: $bgColorDarkLighter--hover;
+            }
+        }
+
+        .active a{
+            @include colorTheme--base;
+        }
+    }
+
+    .wrapper__nav__title{
+        text-transform: uppercase;
+        span{
+            margin-left: 15px;
+        }
+
+    }
+
+    .wrapper__nav__list{}
+
+    .wrapper__nav__list-item{
+        a{
+            background-color: $bgColorDarkLighter;
+            padding: 15px;
+
+        }
+    }
+
+    .wrapper__shop-section{
+        @include colorTheme--base;
+        @include font-family--base;
+        min-height: 500px;
+        border-top: $border--base;
+    }
+
+    .shop-section__title{
+        text-transform: uppercase;
+        font-weight: bold;
+        border-bottom: $border--base;
+    }
 
     .shop-section__content{}
 
     .tab__section{}
 
-    .tab__title{}
+    .tab__title{
+        text-transform: capitalize;
+        font-weight: bold;
+    }
 
-    .tab__description{}
+    .tab__description{
+        color: map-get($map: $color, $key: base);
+    }
 
     .tab__list{}
 
-    .wrapper__shopping-cart{}
+    .tab__list-item__name{
+        @include colorTheme--base;
+        text-transform: capitalize;
+        border: none;
+        border-bottom: $border--base;
+        border-radius: 0px;
+        padding: 20px 15px;
+        margin: 0px 15px;
+    }
 
-    .div__my-order{}
+    .wrapper__shopping-cart{
+        @include colorTheme--base;
+        @include font-family--base;
+        min-height: 500px;
+        border: $border--base;
+        padding: 0px;
+    }
 
-    .my-order__title{}
+    .div__my-order{
+        border-bottom: $border--base;
+    }
 
-    .div__subtotal{}
+    .my-order__title{
+        @include colorTheme--base;
+        border: none;
+    }
 
-    .subtotal__title{}
+    .div__subtotal{
+        border-bottom: $border--base;
+    }
 
-    .div__place-order{}
+    .subtotal__title{
+        @include colorTheme--base;
+        border: none;
+        border-top: 2px solid map-get($map: $color, $key: dark);
+        margin: 0px 15px;
+    }
+
+    .div__place-order{
+        padding: 15px;
+    }
 
     .btn__order-now{}
 

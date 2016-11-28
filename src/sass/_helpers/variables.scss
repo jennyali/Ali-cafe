@@ -16,8 +16,6 @@
 
 
 // + COLORS 
-// #937966 light
-// #1C0305 dark
 
 $color :(
     white: #F4F8FF,
@@ -27,6 +25,13 @@ $color :(
     dark: #160E0B,
     black: #000000,
 );
+
+$bgColorDarkLighter: lighten(#160E0B, 5%);
+$bgColorDarkLighter--hover: lighten(#160E0B, 10%);
+
+// border styles
+
+$border--base: 1px solid map-get($map: $color, $key: base);
 
 // + FONT-FAMILIES
 
