@@ -121,6 +121,9 @@ var $tabSectionCoffeeTab =$('.tab__section--coffee-tab');
 //-- buyCoffee page
 var $iconArrow44 = $('.icon-arrow-40');
 var $wrapperNavTitle =$('.wrapper__nav__title');
+var $globalBlendsTab = $('.global-blends-tab');
+var $globalBlendsTabWrapper = $('#globalBlendsTab');
+var $shopSection_content = $('.shop-section__content');
 
 //------ TEMPLATES ---------//
 
@@ -140,6 +143,24 @@ function menuSegmentTemplate(object){
             </div>`
 };
 
+// buyCoffee middle div content
+function tabShopMenuTemplate(){
+    return `
+        <h3 class="tab__title text-center">house blends</h3>
+        <p class="tab__description text-center">This is a section of your menu. Give your section a brief description</p>
+        <ul class="tab__list list-unstyled list-group">
+
+        </ul>
+    `
+}
+
+function tabShopMenuInnerElTemplate(){
+    return `
+        <li>
+            <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
+        </li>
+    `
+}
 
 //------- EVENTS ----------//
 
@@ -277,6 +298,16 @@ function tabSectionBuilderTwo(array, selector){     //chosen menu tab builder
     $(template).appendTo(selector);
 }
 
+function tabShopMenuBuilder(selector){      // NOT FINISHED //
+    var template = "";
+    var template_inner = "";
+
+    template += tabShopMenuTemplate();
+
+    template += tabShopMenuInnerElTemplate();
+
+    $(template).appendTo(selector);
+}
 
 //------- FUNCTION CALLS ----------//
 
@@ -293,5 +324,6 @@ tabSectionBuilderTwo(coffeeMenuCategories[1], $tabSectionFoodTab);
 tabSectionBuilderTwo(coffeeMenuCategories[2], $tabSectionCoffeeTab);
 tabSectionBuilderTwo(coffeeMenuCategories[3], $tabSectionCoffeeTab);
 
+tabShopMenuBuilder($globalBlendsTabWrapper);
 
 });
