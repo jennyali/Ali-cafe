@@ -29,6 +29,8 @@ $color :(
 $bgColorDarkLighter: lighten(#160E0B, 5%);
 $bgColorDarkLighter--hover: lighten(#160E0B, 10%);
 
+$bg-color--white: map-get($map: $color, $key: white);
+
 // border styles
 
 $border--base: 1px solid map-get($map: $color, $key: base);

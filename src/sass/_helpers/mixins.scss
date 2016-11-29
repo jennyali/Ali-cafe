@@ -92,6 +92,11 @@
     color: map-get($map: $color, $key: base);
 }
 
+@mixin colorTheme--invert-white{
+    background-color: map-get($map: $color, $key: white);
+    color: map-get($map: $color, $key: dark);
+}
+
 @mixin colorTheme--contrast{
     background-color: map-get($map: $color, $key: contrast);
     color: map-get($map: $color, $key: white);

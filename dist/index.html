@@ -318,15 +318,18 @@
                             <li class="list-group-item my-order__title">My Order<span class="badge"><span class="my-order__quanitity">0</span> items</span></li>
                         </div>
                         <div class="div__subtotal">
-                            <span class="icon-bag"></span>
+                            <div class="subtotal__inner-el">
+                                <span class="icon-bag"></span>
+                                <p>Browse our menu and start adding items to your order</p>
+                            </div>
                             <li class="list-group-item subtotal__title">Subtotal<span class="badge">$<span class="subtotal__quanitity">0</span></span></li>
                         </div>
                         <div class="div__place-order">
                             <div>
-                                <p><span class="icon-add-2"></span>Special requests</p>
+                                <p class="place-order__specialReq"><span class="icon-add-2"></span>Special requests</p>
                             </div>
-                            <p>pickup only</p>
-                            <p>for:ASAP(in 15 minutes)</p>
+                            <p><em>pickup only</em></p>
+                            <p>for: ASAP <small>(in 15 minutes)</small></p>
                             <a href="#" data-toggle="tooltip" data-placement="left" title="Cart is empty. Add items to kick off your order."><button class="btn__order-now btn-primary">order now<span class="icon-arrow-68"></span></button></a>
                         </div>
                     </section>
@@ -341,7 +344,7 @@
                             </div>
                             <div class="modal-body">
                                 <p class="page-header">Special requests?</p>
-                                <a href="#modalInput" data-toggle="collapse"><span class="icon-add-2"></span>Add them here. We’ll do our best to make it happen</a>
+                                <a class="modal__input-link" href="#modalInput" data-toggle="collapse"><span class="icon-add-2"></span>Add them here. We’ll do our best to make it happen</a>
                                 <input id="modalInput" class="form-control collapse" type="text" id="comment"></input>
                             </div>
                             <div class="modal-footer">

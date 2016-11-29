@@ -1,0 +1,88 @@
+/*===========================
+            MODAL
+============================*/
+
+
+#modalShoppingCart{
+
+
+    .modal-dialog{
+        @media (min-width: 768px){
+            width: 600px;
+            margin: 90px auto;
+        }
+    }
+
+    .modal-content{
+        @include colorTheme--invert-white;
+        @include font-family--base;
+        border-radius: 0px;
+        padding: 15px;
+    }
+
+    .modal-header{
+        border: none;
+
+        button{
+            @include colorTheme--invert;
+            opacity: 1;
+            padding: 8px 10px;
+            border-radius: 50%;
+            position: absolute;
+            font-size: 12px;
+            outline: none;
+            right: 15px;
+            top: 15px;
+
+                @include media(map-get($breakpoints, md)){
+                    right: -15px;
+                    top: -15px;
+                }
+
+                &:hover{
+                    background-color: $bgColorDarkLighter--hover;
+                }
+        }
+
+        h3{
+            font-weight: bold;
+        }
+
+        p{
+            font-size: 18px;
+            color: map-get($map: $color, $key: base);
+        }
+    }
+
+    .modal-body{}
+
+    .page-header{
+        font-size: 16px;
+        border-bottom: 1px solid;
+        margin-top: 20px;
+    }
+
+    .form-control{}
+
+    .modal__input-link{
+        color: map-get($map: $color, $key: dark);
+        padding-bottom: 15px;
+        text-decoration: none;
+
+            &:hover{
+                color: $bgColorDarkLighter--hover;
+            }
+
+            span{
+                margin-right: 15px;
+            }
+    }
+
+    .modal-footer{
+        border-top: transparent;
+    }
+
+    .tooltip{
+        @include colorTheme--invert-white;
+    }
+}

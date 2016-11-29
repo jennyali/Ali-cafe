@@ -7,6 +7,21 @@
 
 #buyCoffee{
     @include backgroundGradient--body;
+
+    .badge{
+        background: none;
+        color: map-get($map: $color, $key: dark);
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .list-group-item{
+        outline: none;
+
+        &:hover, &:focus{
+            background: transparent;
+        }
+    }
 }
 
 .shop-container{
@@ -16,8 +31,14 @@
     .wrapper__nav{
         @include colorTheme--invert;
         @include font-family--base;
-        min-height: 500px;
+        min-height: initial;
         padding: 0px;
+        margin: 30px 30px;
+
+            @include media(map-get($breakpoints, md)){
+                min-height: 580px;
+                margin: 0px;
+            }
 
         a{
             @include colorTheme--invert;
@@ -31,7 +52,10 @@
         }
 
         .active a{
-            @include colorTheme--base;
+            @include colorTheme--invert-white;
+                @include media(map-get($breakpoints, md)){
+                    border-left: 1px solid map-get($map: $color, $key: base);
+                }
         }
     }
 
@@ -54,10 +78,19 @@
     }
 
     .wrapper__shop-section{
-        @include colorTheme--base;
         @include font-family--base;
-        min-height: 500px;
-        border-top: $border--base;
+        min-height: initial;
+        background: transparent;
+        margin: 30px 30px;
+        padding: 30px 0px;
+
+            @include media(map-get($breakpoints, md)){
+                @include backgroundGradient--body;
+                padding: 30px;
+                margin: 0px;
+                border-top: $border--base;
+                min-height: 580px;
+            }
     }
 
     .shop-section__title{
@@ -82,7 +115,7 @@
     .tab__list{}
 
     .tab__list-item__name{
-        @include colorTheme--base;
+        background: transparent;
         text-transform: capitalize;
         border: none;
         border-bottom: $border--base;
@@ -92,19 +125,27 @@
     }
 
     .wrapper__shopping-cart{
-        @include colorTheme--base;
         @include font-family--base;
-        min-height: 500px;
+        min-height: 560px;
         border: $border--base;
         padding: 0px;
+        margin: 30px 30px;
+        background: transparent;
+
+            @include media(map-get($breakpoints, md)){
+                @include backgroundGradient--body;
+                margin: 0px;
+            }
     }
 
     .div__my-order{
         border-bottom: $border--base;
+        padding: 10px 0px;
     }
 
     .my-order__title{
-        @include colorTheme--base;
+        @include colorTheme--invert-white;
+        background: transparent;
         border: none;
     }
 
@@ -112,21 +153,52 @@
         border-bottom: $border--base;
     }
 
+    .subtotal__inner-el{
+        position: relative;
+        margin: 15px 30px;
+        min-height: 180px;
+
+        p{
+            opacity: 0.3;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+    }
+
     .subtotal__title{
-        @include colorTheme--base;
+        @include colorTheme--invert-white;
+        background: transparent;
         border: none;
         border-top: 2px solid map-get($map: $color, $key: dark);
         margin: 0px 15px;
+        padding: 20px 0px;
     }
 
     .div__place-order{
         padding: 15px;
+        padding-top: 0px;
+
+        p{
+            text-transform: capitalize;
+            padding-top: 15px;
+        }
     }
 
-    .btn__order-now{}
+    .place-order__specialReq{
+        border-bottom: $border--base;
+        padding-bottom: 15px;
 
-}
+        span{
+            margin-right: 15px;
+        }
+    }
 
-#modalShoppingCart{
-    
+    .btn__order-now{
+        margin: 15px 0px;
+    }
+
 }
