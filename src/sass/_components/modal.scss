@@ -18,10 +18,12 @@
         @include font-family--base;
         border-radius: 0px;
         padding: 15px;
+        
     }
 
     .modal-header{
         border: none;
+        text-transform: capitalize;
 
         button{
             @include colorTheme--invert;

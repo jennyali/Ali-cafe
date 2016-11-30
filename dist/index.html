@@ -244,11 +244,9 @@
                         <li><a class="nav-pill__list-item" data-toggle="pill" href="#coffeeBlends">Coffee Blends</a></li>
                     </ul>
                 </div>
-
                 <div class="tab-content menu-content__main">
                     <article id="eatDrink" class="tab-pane in active row menu-content__main--food-tab">
                         <section class="tab__section--food-tab">
-
                         </section>
                     </article>
                     <article  id="coffeeBlends" class="tab-pane row menu-content__main--coffee-tab">
@@ -268,7 +266,6 @@
                     </h1>
                 </div>
             </section>
-
             <section class="shop-container container">
                 <div class="shop-wrapper row">
                     <nav class="col-md-2 wrapper__nav"> <!-- left aside nav -->
@@ -285,31 +282,9 @@
                     <section class="col-md-7 wrapper__shop-section"> <!-- middle section shopping -->
                         <h1 class="page-header shop-section__title text-center">coffee blends</h1>
                         <article class="tab-content shop-section__content">
-
                             <div id="houseBlendsTab" class="tab-pane fade in active tab__section">
-                                <h3 class="tab__title text-center">house blends</h3>
-                                <p class="tab__description text-center">This is a section of your menu. Give your section a brief description</p>
-                                <ul class="tab__list list-unstyled list-group">
-                                    <li>
-                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
-                                    </li>       
-                                    <li>
-                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
-                                    </li>    
-                                    <li>
-                                        <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
-                                    </li>                         
-                                </ul>
                             </div>
-
                             <div id="globalBlendsTab" class="tab-pane fade">
-
                             </div>
                         </article>
                     </section>
@@ -318,6 +293,17 @@
                             <li class="list-group-item my-order__title">My Order<span class="badge"><span class="my-order__quanitity">0</span> items</span></li>
                         </div>
                         <div class="div__subtotal">
+
+                            <div class="cartItem row">
+                                <span class="badge col-sm-1">1</span>
+                                <p class="col-sm-6">Barista's blend</p>
+                                <span class="badge col-sm-1">$3</span>
+                                <div class="col-sm-4">
+                                    <button class="icon-add-1 cartItem__btn"></button>
+                                    <button class="icon-delete-1 cartItem__btn"></button>
+                                </div>
+                            </div>
+
                             <div class="subtotal__inner-el">
                                 <span class="icon-bag"></span>
                                 <p>Browse our menu and start adding items to your order</p>
@@ -336,21 +322,6 @@
                 </div>
                 <div id="modalShoppingCart" class="modal fade" role="dialog">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close icon-delete-2" data-dismiss="modal"></button>
-                                <h3>Barista’s Blend</h3>
-                                <p>$<span>9</span></p>
-                            </div>
-                            <div class="modal-body">
-                                <p class="page-header">Special requests?</p>
-                                <a class="modal__input-link" href="#modalInput" data-toggle="collapse"><span class="icon-add-2"></span>Add them here. We’ll do our best to make it happen</a>
-                                <input id="modalInput" class="form-control collapse" type="text" id="comment"></input>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-default btn-primary"><span class="icon-add-2"></span>add to my order</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
