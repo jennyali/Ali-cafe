@@ -52,7 +52,21 @@ var menuList = [
     {name: "brazil", price: 9, category: "global blend"}
 ];
 
+// ---------- OBJECTS -----------------//
 
+var modalObj = {};
+
+var shoppingCartObj = {
+    shoppingCartArr: [],
+    shoppingCart_quanitity: 0,
+    shoppingCart_subtotal: 0,
+}
+
+var cartItem = {
+    price: 0,
+    quantity: 1,
+    totalPrice: function (){return this.quantity * this.price}
+}
 
 //------- FUNCTION CONSTRUCTORS ----------//
 
@@ -123,7 +137,10 @@ var $iconArrow44 = $('.icon-arrow-40');
 var $wrapperNavTitle =$('.wrapper__nav__title');
 var $globalBlendsTab = $('.global-blends-tab');
 var $globalBlendsTabWrapper = $('#globalBlendsTab');
+var $houseBlendsTabWrapper = $('#houseBlendsTab');
 var $shopSection_content = $('.shop-section__content');
+var $modalDialog = $('.modal-dialog');
+var $modalDialogBtn = $modalDialog.find('button');
 
 //------ TEMPLATES ---------//
 
@@ -144,21 +161,71 @@ function menuSegmentTemplate(object){
 };
 
 // buyCoffee middle div content
-function tabShopMenuTemplate(){
+function tabShopMenuTemplate(category){
     return `
-        <h3 class="tab__title text-center">house blends</h3>
-        <p class="tab__description text-center">This is a section of your menu. Give your section a brief description</p>
-        <ul class="tab__list list-unstyled list-group">
+        <h3 class="tab__title text-center">${category['name']}</h3>
+        <p class="tab__description text-center">${category['description']}</p>
+        <ul id="${category['id']}" class="tab__list list-unstyled list-group ">
 
         </ul>
     `
 }
 
-function tabShopMenuInnerElTemplate(){
+function tabShopMenuInnerElTemplate(menuItem){
     return `
-        <li>
-            <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">barista's blend<span class="badge">$9</span></a>
+        <li data-id="${menuItem['id']}">
+            <a href="#" data-toggle="modal" data-target="#modalShoppingCart" class="tab__list-item__name list-group-item">${menuItem['name']}<span class="badge">$${menuItem['price']}</span></a>
         </li>
+    `
+}
+
+function modalTemplate(modalObj){
+    return `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close icon-delete-2" data-dismiss="modal"></button>
+                    <h3>${modalObj['name']}</h3>
+                    <p>$<span>${modalObj['price']}</span></p>
+                </div>
+                <div class="modal-body">
+                    <p class="page-header">Special requests?</p>
+                    <a class="modal__input-link" href="#modalInput" data-toggle="collapse"><span class="icon-add-2"></span>Add them here. We’ll do our best to make it happen</a>
+                    <input id="modalInput" class="form-control collapse" type="text" id="comment"></input>
+                </div>
+                <div class="modal-footer">
+                    <button data-id="${modalObj['id']}" class="btn btn-default btn-primary modal__btn"><span class="icon-add-2"></span>add to my order</button>
+                </div>
+            </div>
+    `
+}
+
+function shoppingCartTemplate(){
+    return `
+            <div class="div__my-order">
+                <li class="list-group-item my-order__title">My Order<span class="badge"><span class="my-order__quanitity">0</span> items</span></li>
+            </div>
+            <div class="div__subtotal">
+                    
+                <div class="subtotal__inner-el">
+                    <span class="icon-bag"></span>
+                    <p>Browse our menu and start adding items to your order</p>
+                </div>
+                <li class="list-group-item subtotal__title">Subtotal<span class="badge">$<span class="subtotal__quanitity">0</span></span></li>
+            </div>
+    `
+}
+
+function cartItemTemplate(){
+    return `
+            <div class="cartItem row">
+                <span class="badge col-sm-1">1</span>
+                <p class="col-sm-6">Barista's blend</p>
+                <span class="badge col-sm-1">$3</span>
+                <div class="col-sm-4">
+                    <button class="icon-add-1 cartItem__btn"></button>
+                    <button class="icon-delete-1 cartItem__btn"></button>
+                </div>
+            </div>
     `
 }
 
@@ -168,6 +235,18 @@ $(window).on('resize', function(event){
     windowWidth = window.innerWidth;
     moveHeaderInline();
 });
+
+$modalDialog.on('click', '.btn', function(){
+    var thisId = $(this).data('id');
+    shoppingCartAddUpdate(thisId);
+    //shoppingCartRender();
+})
+
+$shopSection_content.on('click', 'li', function(){
+    var thisId = $(this).data('id');
+    modalUpdate(thisId);
+    modalRender();
+})
 
 $wrapperNavTitle.on({
     'click': function(){
@@ -223,9 +302,49 @@ $scrollTop.on({
 
 =============================*/
 
-
-
 //------- FUNCTIONS ----------//
+
+function shoppingCartAddUpdate(thisId){
+    var foundItem = _.filter(menuList, ['id', thisId]);
+    //console.log(foundItem);
+
+    var compareItem = _.find(shoppingCartObj['shoppingCartArr'], ['id', thisId]);
+    //console.log(compareItem);
+
+    
+    if (!compareItem){
+        //console.log('item not found');
+
+        cartItem = _.assign({}, cartItem, foundItem[0]);
+        shoppingCartObj['shoppingCartArr'] = _.concat(shoppingCartObj['shoppingCartArr'], cartItem);
+        shoppingCartObj = _.assign({}, shoppingCartObj, shoppingCartObj['shoppingCartArr']);
+
+    } else {
+        //console.log('true, theres a match');
+        compareItem.quantity++;
+        //console.log(compareItem);
+    }
+    
+    console.log(shoppingCartObj);
+}
+
+function shoppingCartRender(){
+
+}
+
+function modalUpdate(elementId){
+    var foundItem = _.filter(menuList, ['id', elementId]);
+    modalObj = _.assign({}, foundItem[0]);
+}
+
+function modalRender(){
+    var template = "";
+
+    template += modalTemplate(modalObj);
+
+    $modalDialog.empty();
+    $(template).appendTo($modalDialog);
+}
 
 function mapZoomIn(selector){
     $(selector).find('.shop-map').removeClass('map--zoomOut');
@@ -291,22 +410,34 @@ function tabSectionBuilder(){
 function tabSectionBuilderTwo(array, selector){     //chosen menu tab builder
     var menuFiltered = _.filter(menuList, ['category', array['category']]);
     var template = "";
+
     template += tabTitleTemplate(array);
+
     _.each(menuFiltered, function(menuItem){
         template += menuSegmentTemplate(menuItem);
     });
+
     $(template).appendTo(selector);
 }
 
-function tabShopMenuBuilder(selector){      // NOT FINISHED //
-    var template = "";
-    var template_inner = "";
+function tabShopMenuBuilder(selector, array, word){      // NOT FINISHED //
+    var template_header = "";
+    var template_innerEl = "";
+    var selectorUl = "";
+    var category = _.filter(array, ['category', word]);
+    var categoryItems = _.filter(menuList, ['category', word]);
 
-    template += tabShopMenuTemplate();
+    template_header += tabShopMenuTemplate(category[0]);
+    $(template_header).appendTo(selector);
 
-    template += tabShopMenuInnerElTemplate();
 
-    $(template).appendTo(selector);
+    selectorUl = $(selector).children('ul');
+
+    _.each(categoryItems, function(menuItem){
+        template_innerEl += tabShopMenuInnerElTemplate(menuItem);
+    });
+
+    $(template_innerEl).appendTo(selectorUl);
 }
 
 //------- FUNCTION CALLS ----------//
@@ -324,6 +455,8 @@ tabSectionBuilderTwo(coffeeMenuCategories[1], $tabSectionFoodTab);
 tabSectionBuilderTwo(coffeeMenuCategories[2], $tabSectionCoffeeTab);
 tabSectionBuilderTwo(coffeeMenuCategories[3], $tabSectionCoffeeTab);
 
-tabShopMenuBuilder($globalBlendsTabWrapper);
+tabShopMenuBuilder($globalBlendsTabWrapper, coffeeMenuCategories, 'global blend');
+tabShopMenuBuilder($houseBlendsTabWrapper, coffeeMenuCategories, 'house blend');
+
 
 });

@@ -6369,7 +6369,8 @@ button.close {
     font-family: "Pacifico", cursive; }
 
 #modalShoppingCart .modal-header {
-  border: none; }
+  border: none;
+  text-transform: capitalize; }
   #modalShoppingCart .modal-header button {
     background-color: #160E0B;
     color: #E2CFB7;
@@ -6956,6 +6957,19 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 100%; }
+
+.shop-container .cartItem {
+  padding: 15px; }
+
+.shop-container .cartItem__btn {
+  background-color: #A0775D;
+  color: #E2CFB7;
+  border: none;
+  border-radius: 50%;
+  padding: 4px 6px;
+  font-size: 10px;
+  height: 20px;
+  outline: none; }
 
 .shop-container .subtotal__title {
   background-color: #F4F8FF;
