@@ -119,6 +119,7 @@ console.log(menuList, "menu items database");
 //------- SELECTORS/VARIABLES ----------//
 
 var windowWidth = window.innerWidth;
+var $window = $(window);
 
 // -- HEADERS
 var $burgerMenuBtn = $('.btn--base');
@@ -131,6 +132,10 @@ var $scrollTop = $('.parallax__scroll-btn');
 
 // -- PAGES
 var $indexPage = $('#index');
+
+//-- index
+var $index_article_img = $('.article__img').find('img');
+var $index_article_img_alt = $('.article__img--alt').find('img');
 
 //-- jumbotron
 var $ourShopJumbo = $('#ourShops').find('.jumbotron--base');
@@ -258,10 +263,14 @@ function cartItemTemplate(object){
 
 //------- EVENTS ----------//
 
-$(window).on('resize', function(event){         
+$window.on('resize', function(event){         
     windowWidth = window.innerWidth;
     moveHeaderInline();
 });
+
+$window.on('scroll', check_if_in_view); //---- scroll event 
+
+$window.trigger('scroll');
 
 $mainShoppingCart.on('mouseenter', '.cartItem', function(){
     if(windowWidth >= 992){
@@ -361,6 +370,26 @@ $scrollTop.on({
 =============================*/
 
 //------- FUNCTIONS ----------//
+
+function check_if_in_view(){
+    var window_height = $window.height();
+    var window_top_position = $window.scrollTop();
+    var window_bottom_position = (window_top_position + window_height);
+
+    $.each($index_article_img, function(){
+        var $element = $(this);
+        var element_height = $element.outerHeight();
+        var element_top_position = $element.offset().top;
+        var element_bottom_position = (element_top_position + element_height);
+
+        if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)){
+            $element.addClass('in-view');
+        } else {
+            $element.removeClass('in-view');
+        }
+    });
+}
+
 
 function shoppingCartMinusUpdate(thisId){
         var compareItem = _.find(shoppingCartObj['shoppingCartArr'], ['id', thisId]);
