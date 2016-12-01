@@ -6,7 +6,9 @@
 
 #index{
     @include backgroundGradient--body;
+
 }
+
 
 .index-content{
     @include font-family--base;
@@ -14,8 +16,9 @@
     color: map-get($map: $color, $key: dark);
 
         @include media(map-get($breakpoints, sm)){
-            padding: 0px 15px;
+            padding: 60px 15px 0px 15px;
         }
+
 
     .content__article{
         margin: 40px 0px 80px 0px;
@@ -34,23 +37,38 @@
         }
     }
 
+
+
     .article__img{
 
         .img-responsive{
             width: 100%;
+            opacity: 0;
 
             @include media(map-get($breakpoints, lg)){
                 position: relative;
                 transform: translateX(-45px);
             }
         }
+
+        .in-view{
+            animation-name: img_slide_in_left;
+            animation-duration: 0.5s;
+            animation-delay: 0s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+
+                @include media(map-get($breakpoints, md)){
+                    animation-delay: 0.7s;
+                }
+        }
     }
 
-    
     .article__img--alt{
 
         .img-responsive{
             width: 100%;
+            opacity: 0;
 
             @include media(map-get($breakpoints, lg)){
                 position: relative;
