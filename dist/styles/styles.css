@@ -6186,8 +6186,8 @@ button.close {
   border-top: 1px solid #A0775D; }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-  background-color: #EA2E5A;
-  color: #F4F8FF;
+  background-color: #160E0B;
+  color: #E2CFB7;
   text-decoration: none;
   outline: 0; }
 
