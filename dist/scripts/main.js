@@ -58,15 +58,27 @@ var modalObj = {};
 
 var shoppingCartObj = {
     shoppingCartArr: [],
-    shoppingCart_quanitity: 0,
-    shoppingCart_subtotal: 0,
+    shoppingCart_quanitity: function(){
+        var totalAmount = 0;
+
+        _.each(this.shoppingCartArr, function(cartItem){
+            totalAmount += cartItem.quantity;
+        })
+
+        return totalAmount;
+    },
+    shoppingCart_subtotal: function(){
+        var totalValue = 0;
+
+        _.each(this.shoppingCartArr, function(cartItem){
+            totalValue += cartItem.totalPrice();
+        })
+
+        return totalValue;
+    },
 }
 
-var cartItem = {
-    price: 0,
-    quantity: 1,
-    totalPrice: function (){return this.quantity * this.price}
-}
+
 
 //------- FUNCTION CONSTRUCTORS ----------//
 
@@ -141,6 +153,8 @@ var $houseBlendsTabWrapper = $('#houseBlendsTab');
 var $shopSection_content = $('.shop-section__content');
 var $modalDialog = $('.modal-dialog');
 var $modalDialogBtn = $modalDialog.find('button');
+var $mainShoppingCart = $('.wrapper__shopping-cart');
+var $cartItemAddbtn = $mainShoppingCart.find('button.cartItem__btn');
 
 //------ TEMPLATES ---------//
 
@@ -193,37 +207,50 @@ function modalTemplate(modalObj){
                     <input id="modalInput" class="form-control collapse" type="text" id="comment"></input>
                 </div>
                 <div class="modal-footer">
-                    <button data-id="${modalObj['id']}" class="btn btn-default btn-primary modal__btn"><span class="icon-add-2"></span>add to my order</button>
+                    <button data-id="${modalObj['id']}" class="btn btn-default btn-primary modal__btn" data-dismiss="modal"><span class="icon-add-2"></span>add to my order</button>
                 </div>
             </div>
     `
 }
 
-function shoppingCartTemplate(){
+function addOrderTemplate(){
+    return `
+            <div class="div__place-order">
+                <div>
+                    <p class="place-order__specialReq"><span class="icon-add-2"></span>Special requests</p>
+                </div>
+                    <p><em>pickup only</em></p>
+                    <p>for: ASAP <small>(in 15 minutes)</small></p>
+                    <a href="#" data-toggle="tooltip" data-placement="left" title="Cart is empty. Add items to kick off your order."><button class="btn__order-now btn-primary">order now<span class="icon-arrow-68"></span></button></a>
+            </div>
+    `
+}
+
+function shoppingCartTemplate(object){
     return `
             <div class="div__my-order">
-                <li class="list-group-item my-order__title">My Order<span class="badge"><span class="my-order__quanitity">0</span> items</span></li>
+                <li class="list-group-item my-order__title">My Order<span class="badge"><span class="my-order__quanitity">${object.shoppingCart_quanitity()}</span> items</span></li>
             </div>
             <div class="div__subtotal">
                     
                 <div class="subtotal__inner-el">
                     <span class="icon-bag"></span>
-                    <p>Browse our menu and start adding items to your order</p>
+                    <p class="subtotal__inner-el__text">Browse our menu and start adding items to your order</p>
                 </div>
-                <li class="list-group-item subtotal__title">Subtotal<span class="badge">$<span class="subtotal__quanitity">0</span></span></li>
+                <li class="list-group-item subtotal__title">Subtotal<span class="badge">$<span class="subtotal__quanitity">${object.shoppingCart_subtotal()}</span></span></li>
             </div>
     `
 }
 
-function cartItemTemplate(){
+function cartItemTemplate(object){
     return `
-            <div class="cartItem row">
-                <span class="badge col-sm-1">1</span>
-                <p class="col-sm-6">Barista's blend</p>
-                <span class="badge col-sm-1">$3</span>
-                <div class="col-sm-4">
-                    <button class="icon-add-1 cartItem__btn"></button>
-                    <button class="icon-delete-1 cartItem__btn"></button>
+            <div class="cartItem" data-id="${object.id}">
+                <span class="badge cartItem__quantity">${object.quantity}</span>
+                <p class="cartItem__name">${object.name}</p>
+                <span class="badge cartItem__price">$${object.totalPrice()}</span>
+                <div class="cartItem__btns">
+                    <button class="icon-add-2 cartItem__btn cartItem__btn--add" data-id="${object.id}"></button>
+                    <button class="icon-delete-2 cartItem__btn cartItem__btn--minus" data-id="${object.id}"></button>
                 </div>
             </div>
     `
@@ -236,10 +263,37 @@ $(window).on('resize', function(event){
     moveHeaderInline();
 });
 
+$mainShoppingCart.on('mouseenter', '.cartItem', function(){
+    if(windowWidth >= 992){
+        $(this).find('.cartItem__btns').addClass('cartItem__btns--move');
+        $(this).find('.cartItem__price').addClass('cartItem__price--move');
+    }
+})
+
+$mainShoppingCart.on('mouseleave', '.cartItem', function(){
+    $(this).find('.cartItem__btns').removeClass('cartItem__btns--move');
+    $(this).find('.cartItem__price').removeClass('cartItem__price--move');
+})
+
+$mainShoppingCart.on('click', '.cartItem__btn--minus', function(event){
+    var thisId = $(this).data('id');
+    event.preventDefault();
+    shoppingCartMinusUpdate(thisId);
+    shoppingCartRender();
+})
+
+$mainShoppingCart.on('click', '.cartItem__btn--add', function(event){
+    var thisId = $(this).data('id');
+    event.preventDefault();
+    shoppingCartAddUpdate(thisId);
+    shoppingCartRender();
+})
+
+
 $modalDialog.on('click', '.btn', function(){
     var thisId = $(this).data('id');
     shoppingCartAddUpdate(thisId);
-    //shoppingCartRender();
+    shoppingCartRender();
 })
 
 $shopSection_content.on('click', 'li', function(){
@@ -271,7 +325,11 @@ $burgerMenuBtn.on({
     },
 });
 
-$dropdownMenu.on('focus', 'li', function(event){
+/*$dropdownMenu.on('focus', 'li', function(event){
+    dropdownEvent(this);
+});*/
+
+$dropdownMenu.on('click', 'li', function(event){
     dropdownEvent(this);
 });
 
@@ -304,31 +362,67 @@ $scrollTop.on({
 
 //------- FUNCTIONS ----------//
 
+function shoppingCartMinusUpdate(thisId){
+        var compareItem = _.find(shoppingCartObj['shoppingCartArr'], ['id', thisId]);
+
+        compareItem.quantity--;
+
+        if(compareItem.quantity === 0){
+            shoppingCartObj.shoppingCartArr.pop(compareItem);
+        }
+
+}
+
 function shoppingCartAddUpdate(thisId){
     var foundItem = _.filter(menuList, ['id', thisId]);
-    //console.log(foundItem);
 
     var compareItem = _.find(shoppingCartObj['shoppingCartArr'], ['id', thisId]);
-    //console.log(compareItem);
 
-    
     if (!compareItem){
-        //console.log('item not found');
+
+        var cartItem = {
+            price: 0,
+            quantity: 1,
+            totalPrice: function (){return this.quantity * this.price}
+        }
 
         cartItem = _.assign({}, cartItem, foundItem[0]);
         shoppingCartObj['shoppingCartArr'] = _.concat(shoppingCartObj['shoppingCartArr'], cartItem);
         shoppingCartObj = _.assign({}, shoppingCartObj, shoppingCartObj['shoppingCartArr']);
-
+        
     } else {
-        //console.log('true, theres a match');
         compareItem.quantity++;
-        //console.log(compareItem);
     }
     
-    console.log(shoppingCartObj);
+    //console.log(shoppingCartObj.shoppingCartArr, 'whats in the shopping cart');
+    //console.log(shoppingCartObj.shoppingCartArr[0].totalPrice(), 'total price of 1st item');
+    //console.log(shoppingCartObj.shoppingCart_subtotal(), 'whole cart subtotal');
+    //console.log(shoppingCartObj.shoppingCart_quanitity(), 'whole cart total items');
 }
 
 function shoppingCartRender(){
+    var template = "";
+    var order_template = "";
+    
+    template += shoppingCartTemplate(shoppingCartObj);
+    order_template += addOrderTemplate();
+
+    $mainShoppingCart.empty();
+
+    $(template).appendTo($mainShoppingCart);
+    $(order_template).appendTo($mainShoppingCart);
+    subtotalInner_elRender();
+    //console.log($mainShoppingCart.find('div.subtotal__inner-el'));
+}
+
+function subtotalInner_elRender(){
+    var cartItem_template = "";
+
+    _.each(shoppingCartObj.shoppingCartArr, function(cartItem){
+        cartItem_template += cartItemTemplate(cartItem);
+    });
+
+    $(cartItem_template).appendTo($mainShoppingCart.find('div.subtotal__inner-el'));
 
 }
 
@@ -374,9 +468,7 @@ function burgerOnClick(that){
 
 function dropdownEvent(that){
     $dropdownMenu.find('li').removeClass('active');
-    $(that).toggleClass('active');
-    //$(that).find('span').toggleClass('icon-delete-1');
-    //$(that).closest($dropdownMenu).slideToggle('fast');
+
 }
 
 function dropdownClose(){
@@ -457,6 +549,8 @@ tabSectionBuilderTwo(coffeeMenuCategories[3], $tabSectionCoffeeTab);
 
 tabShopMenuBuilder($globalBlendsTabWrapper, coffeeMenuCategories, 'global blend');
 tabShopMenuBuilder($houseBlendsTabWrapper, coffeeMenuCategories, 'house blend');
+
+shoppingCartRender(shoppingCartObj);
 
 
 });

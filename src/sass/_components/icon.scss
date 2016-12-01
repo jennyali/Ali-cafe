@@ -29,8 +29,9 @@
 }
 
 .icon-bag{
+    color: map-get($map: $color, $key: dark);
     font-size: 72px;
-    opacity: 0.2;
+    opacity: 0.1;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
